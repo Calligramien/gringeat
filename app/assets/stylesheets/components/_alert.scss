@@ -1,6 +1,23 @@
-.alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+.alert-error{
+color: #FF9779;
+background-color: #F9BEAD;
+width:731px;
+height:48px;
 }
+
+
+.alert-success{
+color: #2EC4B6;
+width:731px;
+height:48px;
+
+}
+
+.alert.notification{
+color: #FF9779;
+background-color: #F9BEAD;
+width:731px;
+height:48px;
+}
+
+
