@@ -1,0 +1,29 @@
+.cards-review{
+  display:flex;
+}
+.card-review{
+  height: 120px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid;
+}
+.card-review img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+.card-review-infos{
+   padding: 16px;
+}
+.card-review-infos .label{
+   padding: 16px;
+}
+
+.card-review-ratings{
+  display:flex;
+}
+.card-review-infos .fas .fa-star {
+  display: inline-block;
+  font-size: 10px;
+}
