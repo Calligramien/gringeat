@@ -1,0 +1,14 @@
+<% if @products.class == String %>
+<div><%= @products %> </div>
+<% else %>
+<% @products.each do |product| %>
+<p>code-barre <%= product.fetch["code"] %></p>
+<p>nom du produit <%= product.fetch["product_name"] %></p>
+<p>image url<%= product.fetch["image_front_small_url"] %></p>
+<p>nom generique <%= product.fetch["generic_name"] %></p>
+<p>liste des ingredients avec allergènes<%= product.fetch["ingredients_text_with_allergens"] %></p>
+<p>allergènes dans les ingrédients <%= product.fetch["allergens_from_ingredients"] %></p>
+<p>allergènes <%= product.fetch["allergens"] %></p>
+
+<% end  %>
+<% end %>
