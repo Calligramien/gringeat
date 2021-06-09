@@ -1,0 +1,65 @@
+
+<%#CARDS YOU MIGHT LIKE %>
+    <div class="suggestions">
+      <div class="cards-review">
+
+<% @products.first(5).each do |product| %>
+        <div class="card-review">
+          <%= cl_image_tag @product.media.key, crop: :fill, class: "img-produit" %>
+          <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+          <div class="card-review-infos">
+
+            <div class="card-review-name-labels">
+              <h4><%= @product.name %></h4>
+              <div class="label">
+              <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+              <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+              </div>
+            </div>
+            <p><%= @product.brand %></p>
+
+            <div class="card-review-ratings">
+
+              <% @product.rating.times do %>
+                <i class="fas fa-star fa-xs"></i>
+              <%end%>
+              <% ( 5 - @product.rating).times do %>
+                <i class="far fa-star fa-xs"></i>
+              <%end%>
+                
+              <span><%= @product.rating %>
+            </div> 
+          </div>
+        </div>
+<% end %>
+      </div>    
+    </div>
+
+<%# CARDS REVIEWS %>
+  <div class="reviews">
+
+      <div class="cards-written-review">
+        <% @products.first(5).each do |product| %>
+        <div class="card-written-review">
+          <div class="card-written-review-avatar">
+            <%= cl_image_tag @product.media.key, crop: :fill, class: "avatar-review" %>
+            <p><%= user.name %></p>
+          </div>
+          <div class="card-written-review-infos">
+            <div class="card-written-review-ratings">
+              <% @product.rating.times do %>
+                <i class="fas fa-star fa-xs"></i>
+              <%end%>
+              <% ( 5 - @product.rating).times do %>
+                <i class="far fa-star fa-xs"></i>
+              <%end%>
+              </br>
+              <span>20/10/2035</span>
+            </div> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+        </div>
+        <%end%>
+      </div>
+    </div>  
+
+    

@@ -1,0 +1,28 @@
+.image-produit-id{
+  height: 250px;
+  width:100%;
+  object-fit: cover;
+  background-color: rgb(221, 221, 221);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position:relative;
+}
+
+.fas.fa-chevron-left{
+  position: absolute;
+  top:50px;
+  left:50px;
+}
+
+.product-id-photo .label-id{
+  position: absolute;
+  top:120px;
+  padding-left: 10px;
+  font-size: 50px;
+}
+
+.product-id-infos-titre{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
