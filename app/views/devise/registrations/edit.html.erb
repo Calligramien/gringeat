@@ -3,22 +3,23 @@
 <p> Find me in app/views/devise/registrations/edit.html.erb </p>
 
  -->
-
+<div class="main-container">
+  <div class="profile-container">
 
 <h1>Profile</h1>
 
-<div class="avatar-name"> <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-giant text-center"%>
+<%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-giant"%>
   <div class="fullname"><% @user.last_name %><% @user.first_name %>
   </div>
-</div>
+
 <div class="profil-options">
   <p><i class="fas fa-user"></i> Edit profile</p>
   <p><i class="far fa-list-alt"></i> Settings</p>
   <p><i class="fas fa-clipboard-list"></i> Terms & Privacy Policy</p>
   <p><i class="fas fa-sign-out-alt"></i> Log Out</p>
 </div>
-
-
+</div>
+</div>
 
 
 
