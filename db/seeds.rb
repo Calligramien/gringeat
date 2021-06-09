@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+products = Product.create({code: 12354 ,name: "Volvic water" ,description: "Lorem impsum" ,origin: "Volvic",category: "Water"})    
+
+

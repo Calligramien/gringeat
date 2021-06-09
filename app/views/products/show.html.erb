@@ -1,0 +1,40 @@
+<div class="main-container">
+<div class="product-id">
+<%#CARD IMAGE%>
+<img src="#" alt="" class="image-produit-id">
+  <div class="product-id-photo">
+    <i class="fas fa-chevron-left"><%= link_to "", products_path %></i>
+    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+    <div class="label-id">
+      <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+      <%= image_tag 'icons/leaf_icon', style: 'width:16px',class: 'label'%>
+    </div>
+    
+  </div>
+
+<%# CARD INFOS %> 
+  <div class="product-id-infos">
+<%#CARD INFOS TITRE %>    
+    <div class="product-id-infos-titre">
+      <h4><%= @product.name %></h4>
+      <div class="card-review-ratings">
+          <i class="fas fa-star fa-xs"></i>
+          <i class="fas fa-star fa-xs"></i>
+          <i class="fas fa-star fa-xs"></i>
+          <i class="fas fa-star fa-xs"></i>
+          </br>
+          <span>(520)</span>
+      </div> 
+    </div>
+  <p><%= @product.origin %></p>
+
+<%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
+    <p><%= @product.description %></p>
+    <%= link_to "See ingredients" %>
+  
+  </div>
+
+</div>
+</div>
+
+
