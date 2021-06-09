@@ -7,7 +7,7 @@
 
 .card-review{
   height: 90px;
-  width:230px;
+  width:250px;
   display: flex;
   box-shadow: 1px 2px 5px rgba(217, 218, 217, 0.50);
   border-radius: 15px;
@@ -52,6 +52,7 @@
 
 .card-review-infos{
    padding-left: 16px;
+   padding-right: 16px;
    padding-top:12px;
 }
 
@@ -62,7 +63,7 @@
    align-items: center;
 }
 .card-review-name-labels .label {
-  padding-left: 12px;
+  padding-left: 10px;
 }
 
 .card-review-name-labels .label img{

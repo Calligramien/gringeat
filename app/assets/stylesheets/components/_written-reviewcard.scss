@@ -12,6 +12,7 @@
 
 .card-written-review p{
   margin:0px;
+  font-size:12px;
 }
 
 
@@ -22,6 +23,7 @@
 
 .card-written-review-infos{
   padding-left:16px;
+  padding-right:16px;
   padding-top:12px;
 }
 
@@ -33,4 +35,15 @@
 .card-written-review-infos i {
   display: inline-block;
   color:#FAD41B;
+}
+
+.card-written-review-avatar {
+  padding-top: 15px;
+}
+
+.avatar-review {
+  border-radius: 60px;
+  height:40%;
+  width: 90%;
+  background-color: rgb(221, 221, 221);
 }
