@@ -32,3 +32,12 @@
   </div>
 </div>
 </div>
+
+
+<% if @products.class == String %>
+<div><%= @products %> </div>
+<% else %>
+<% @products.each do |product| %>
+<%= product.fetch["product_name"] %>
+<% end  %>
+<% end %>
