@@ -1,16 +1,3 @@
-<% if @products.class == String %>
-<div><%= @products %> </div>
-<% else %>
-<% @products.each do |product| %>
-<%= product.fetch["code"] %>
-<%= product.fetch["product_name"] %>
-<%= product.fetch["brands"] %>
-<%= product.fetch["image_front_small_url"] %>
-
-<% end  %>
-<% end %>
-
-
 
 <h1>test navbar</h1>
 <div class="main-container">
@@ -47,4 +34,5 @@
 </div>
 </div>
 
+<h3>product page</h3>
 
