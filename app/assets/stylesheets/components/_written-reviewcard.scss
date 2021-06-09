@@ -1,0 +1,36 @@
+.cards-written-review{
+  min-height: 100vh;
+}
+.card-written-review{
+  height: 90px;
+  width:100%;
+  display: flex;
+  box-shadow: 1px 2px 5px rgba(217, 218, 217, 0.50);
+  border-radius: 15px;
+  padding-left: 10px;
+}
+
+.card-written-review p{
+  margin:0px;
+}
+
+
+.card-written-review span{
+  font-size: 10px;
+  padding-left: 15px;
+}
+
+.card-written-review-infos{
+  padding-left:16px;
+  padding-top:12px;
+}
+
+.card-written-review-ratings{
+  display:flex;
+  align-items:center;
+  padding-left:2px;
+}
+.card-written-review-infos i {
+  display: inline-block;
+  color:#FAD41B;
+}

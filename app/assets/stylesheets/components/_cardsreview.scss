@@ -1,0 +1,83 @@
+/*CARDS BEST REVIEW*/
+.cards-review{
+  display:flex;
+  align-items: center;
+  height: 200px;
+}
+
+.card-review{
+  height: 90px;
+  width:230px;
+  display: flex;
+  box-shadow: 1px 2px 5px rgba(217, 218, 217, 0.50);
+  border-radius: 15px;
+  margin-right:15px;
+}
+
+/*FONT*/
+.card-review h4{
+  margin:0px;
+  font-size: 16px;
+  font-weight:bolder;
+}
+.card-review p{
+  margin:0px;
+  padding-left:3px;
+  font-size: 12px;
+}
+
+.card-review span{
+  font-size: 10px;
+  padding-left: 15px;
+  margin-top: 1px;
+}
+
+/*CARD INFOS + IMAGES*/
+
+.card-review .img-produit {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+  background-color: rgb(221, 221, 221);
+  border-radius: 15px;
+  position: relative;
+}
+
+.card-review .heart {
+  position:absolute;
+  border-radius: 50px;
+  background-color: white;
+  padding:3px;
+}
+
+.card-review-infos{
+   padding-left: 16px;
+   padding-top:12px;
+}
+
+/*TITRE + LABELS*/
+.card-review-name-labels {
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.card-review-name-labels .label {
+  padding-left: 12px;
+}
+
+.card-review-name-labels .label img{
+   border: 1px solid gray;
+   border-radius: 50px;
+   padding:3px;
+   margin-bottom: 3px;
+}
+
+.card-review-ratings{
+  display:flex;
+  align-items:center;
+  padding-left:2px;
+}
+.card-review-infos i {
+  display: inline-block;
+  color:#FAD41B;
+}
