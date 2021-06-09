@@ -1,0 +1,25 @@
+.cards-category{
+  display:flex;
+  align-items: center;
+  height: 100px;
+}
+.card-category{
+  height: 77px;
+  width:55px;
+  border-radius: 15px;
+  margin-right:15px;
+}
+
+.card-category p{
+  font-size: 12px;
+  margin-top: 5px;
+  text-align:center;
+}
+
+.card-category .img-category {
+  height: 55px;
+  width: 100%;
+  object-fit: cover;
+  background-color: rgb(221, 221, 221);
+  border-radius: 15px;
+} 
