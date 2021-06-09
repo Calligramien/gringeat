@@ -1,24 +1,60 @@
-<!DOCTYPE html>
-  <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Gring'Eat | Playground</title>
-        <meta name="Playground" content="Hello World, this is my playground.">
-        <meta charset="utf-8">
+<%# #CARDS BEST REVIEW %>
+<div class="cards-review">
+  <div class="card-review">
+    <img src="#" alt="image produit" class="img-produit">
+    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+    <div class="card-review-infos">
 
-        <link rel="stylesheet" href="app/assets/stylesheets/pages/application.scss">
-    </head>
+      <div class="card-review-name-labels">
+        <h4>Water</h4>
+        <div class="label">
+         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+        </div>
+      </div>
+      <p>Volvic</p>
 
-    <body>
+      <div class="card-review-ratings">
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        </br>
+        <span>(520)</span>
+      </div> 
 
-      <h1>Gring'Eat</h1>
-      <h2>Gring'Eat</h2>
-      <h3>Gring'Eat</h3>
-      <h4>Gring'Eat</h4>
-      <h5>Gring'Eat</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet aliquam nisi, eu pharetra purus. Mauris tincidunt pretium lacus, sit amet lobortis erat elementum eget. Morbi sit amet dolor lacinia, congue arcu et, viverra ipsum. Morbi sed tincidunt leo, et fermentum dui. Nam congue pulvinar tellus. Nullam consequat purus et ornare ornare. Donec vulputate, eros et sodales semper, sapien dolor luctus nisi, in ornare magna velit et lacus. Ut non vestibulum urna. Aliquam ac nisi at purus faucibus tempor a nec turpis. Sed id tortor porta, consequat nibh at, condimentum nulla. Cras vel porttitor neque.</p>     
+    </div>
+  </div>
 
+  <div class="card-review">
+    <img src="#" alt="image produit" class="img-produit">
+    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+    <div class="card-review-infos">
+
+      <div class="card-review-name-labels">
+        <h4>Water</h4>
+        <div class="label">
+         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+        </div>
+      </div>
+
+      <p>Volvic</p>
+      <div class="card-review-ratings">
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        </br>
+        <span>(520)</span>
+      </div> 
+
+    </div>
+  </div>  
+</div>
+
+<%# #CARD CATEGORY  %>
 <div class="cards-category">
   <div class="card-category">
     <img src="#" alt="" class="img-category">
@@ -33,9 +69,5 @@
       <p>Name</p>
     </div>
   </div>
-  
+
 </div>
-
-
-  </body>
-  </html>

@@ -1,0 +1,26 @@
+.checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28px;
+  width: 28px;
+  background-color: #FFFFFF;
+  border: #E1E6E8 1px solid;
+  border-radius: 4px;
+}
+
+.checkbox:hover {
+  background-color: #E1E6E8
+}
+
+.checkbox input:checked ~ .checkbox {
+  background-color: #62D2C8;
+}
+
+.checkbox .checkbox:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #FFFFFF;
+}
