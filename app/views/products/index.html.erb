@@ -4,6 +4,7 @@
 
 <div class="cards-result">
 <% @products.each do |product| %>
+  <%= link_to product_detail_path(product.code) do %>
   <div class="card-result">
     <img src="<% product.image_url %>" alt="" class="img-produit-result">
     <div class="card-result-infos">
@@ -25,5 +26,6 @@
       </div>
     </div>
   </div>
+  <% end %>
   <% end %>
 </div>
