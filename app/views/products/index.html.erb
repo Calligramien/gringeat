@@ -1,12 +1,14 @@
+<%= debug @products %>
 
 <h3>Results</h3>
 
 <div class="cards-result">
+<% @products.each do |product| %>
   <div class="card-result">
-    <img src="#" alt="" class="img-produit-result">
+    <img src="<% product.image_small_url %>" alt="" class="img-produit-result">
     <div class="card-result-infos">
       <div class="card-result-name-labels">
-        <h4>Biscuit</h4>
+        <h4><%= product.product_name %></h4>
         <div class="label">
          <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
          <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
@@ -23,76 +25,5 @@
       </div>
     </div>
   </div>
-
-  <div class="card-result">
-    <img src="#" alt="" class="img-produit-result">
-    <div class="card-result-infos">
-      <div class="card-result-name-labels">
-        <h4>Biscuit</h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-        </div>
-      </div>
-      <p>Saint Michel</p>
-      <div class="card-result-ratings">
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        </br>
-        <span>(520)</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<br>
-<br>
-<br>
-
-  <div class="cards-result">
-    <div class="card-result">
-    <img src="#" alt="" class="img-produit-result">
-    <div class="card-result-infos">
-      <div class="card-result-name-labels">
-        <h4>Biscuit</h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-        </div>
-      </div>
-      <p>Saint Michel</p>
-      <div class="card-result-ratings">
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        </br>
-        <span>(520)</span>
-      </div>
-    </div>
-  </div>
-
-    <div class="card-result">
-    <img src="#" alt="" class="img-produit-result">
-    <div class="card-result-infos">
-      <div class="card-result-name-labels">
-        <h4>Biscuit</h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-        </div>
-      </div>
-      <p>Saint Michel</p>
-      <div class="card-result-ratings">
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        </br>
-        <span>(520)</span>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
