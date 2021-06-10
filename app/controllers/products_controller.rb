@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
+
   end
 end

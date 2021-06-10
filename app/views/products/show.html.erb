@@ -2,7 +2,7 @@
 <%#CARD IMAGE%>
 
   <div class="product-id-photo">
-    <i class="fas fa-chevron-left"><%= link_to "", products_path %></i>
+    <i class="fas fa-chevron-left"><%=   %></i>
     <%= image_tag 'icons/heart_icon', style: 'width:20px', class: 'heart'%>
 
     <div class="label-id">
@@ -16,7 +16,7 @@
   <div class="product-id-infos">
 <%#CARD INFOS TITRE %>    
     <div class="product-id-infos-titre">
-      <h4><%= @product.name %></h4>
+      <h4><%= @product.product_name %></h4>
       <div class="card-review-ratings">
           <i class="fas fa-star fa-xs"></i>
           <i class="fas fa-star fa-xs"></i>
@@ -26,10 +26,10 @@
           <span>(520)</span>
       </div> 
     </div>
-  <p><%= @product.origin %></p>
+  <p><%= @product.brands %></p>
 
 <%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
-    <p><%= @product.description %></p>
+    <p><%= @product.generic_name %>.</p>
     <%= link_to "See ingredients" %>
   
   </div>
@@ -137,13 +137,16 @@
 
 
 
-<ul class="list-group">
-  <% @product.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %></li>
-  <% end %>
-</ul>
 
-<%= link_to 'Leave a review', new_product_review_path(@product) %>
+
+<ul class="list-group">
+
+  <% @product.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %> </li> 
+   <% end %>
+ </ul>
+
+<%= link_to 'Leave a review', new_product_review_path(@product) %> 
 
 <script src="bootstrap/js/bootstrap.js"></script>
 <script src="jquery.bcSwipe.js"></script>
