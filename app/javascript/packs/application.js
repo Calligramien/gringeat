@@ -56,23 +56,24 @@ function load_quagga(){
       Quagga.onDetected(function(result) {
         var last_code = result.codeResult.code;
         last_result.push(last_code);
+
         if (last_result.length > 20) {
           const code = order_by_occurrence(last_result)[0];
           last_result = [];
           Quagga.stop();
 
 
+
+
+
+
+
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", `/product/${code}`, false ); // false for synchronous request
+    xmlHttp.open( "GET", `/product/${code}`, true ); // false for synchronous request
     xmlHttp.send( null );
-    return xmlHttp.responseText;
+    console.log(code)
+    window.location.href = `/product/${code}`;
 
-
-
-          // $.ajax({
-          //   type: "GET",
-          //   url: `/product/${code}`,
-          // });
         }
       });
     }
