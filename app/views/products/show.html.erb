@@ -36,57 +36,106 @@
 
 </div>
 
-<div class="cards-review">
-  <div class="card-review">
-    <img src="#" alt="image produit" class="img-produit">
-    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
-    <div class="card-review-infos">
+<%# SUGESTIONS SWIPE %>
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12">
+      <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 
-      <div class="card-review-name-labels">
-        <h4>Water</h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-        </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="block4-wrap">
+                <div class="block4">
+                  <div class="card-review">
+                    <img src="#" alt="image produit" class="img-produit">
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+
+                      <div class="card-review-name-labels">
+                        <h4>Water</h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p>Volvic</p>
+
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+
+                                <div class="block4">
+                  <div class="card-review">
+                    <img src="#" alt="image produit" class="img-produit">
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+
+                      <div class="card-review-name-labels">
+                        <h4>Water</h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p>Volvic</p>
+
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="block4">
+                  <div class="card-review">
+                    <img src="#" alt="image produit" class="img-produit">
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+
+                      <div class="card-review-name-labels">
+                        <h4>Water</h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p>Volvic</p>
+
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+
       </div>
-      <p>Volvic</p>
-
-      <div class="card-review-ratings">
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        </br>
-        <span>(520)</span>
-      </div> 
-    </div>
-  </div>
-
-  <div class="card-review">
-    <img src="#" alt="image produit" class="img-produit">
-    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
-    <div class="card-review-infos">
-
-      <div class="card-review-name-labels">
-        <h4>Water</h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-        </div>
-      </div>
-      <p>Volvic</p>
-
-      <div class="card-review-ratings">
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        </br>
-        <span>(520)</span>
-      </div> 
     </div>
   </div>
 </div>
+
+
+
+
+
 
 <ul class="list-group">
   <% @product.reviews.each do |review| %>
@@ -96,6 +145,7 @@
 
 <%= link_to 'Leave a review', new_product_review_path(@product) %>
 
-
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="jquery.bcSwipe.js"></script>
 
 
