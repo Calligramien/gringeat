@@ -5,7 +5,7 @@
 <div class="cards-result">
 <% @products.each do |product| %>
   <div class="card-result">
-    <img src="<% product.image_small_url %>" alt="" class="img-produit-result">
+    <img src="<% product.image_url %>" alt="" class="img-produit-result">
     <div class="card-result-infos">
       <div class="card-result-name-labels">
         <h4><%= product.product_name %></h4>
@@ -14,7 +14,7 @@
          <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
         </div>
       </div>
-      <p>Saint Michel</p>
+      <p><% product.brands %></p>
       <div class="card-result-ratings">
         <i class="fas fa-star fa-xs"></i>
         <i class="fas fa-star fa-xs"></i>
