@@ -11,4 +11,8 @@ class ProductsController < ApplicationController
     @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
 
   end
+
+  def get_barcode
+    @product = Product.find_by(upc: params[:upc])
+  end
 end
