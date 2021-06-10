@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+.searchbar {
+  width: 80%;
+  height: 56px;
+  background-color: #F2F3F2;
+  text-align: left;
+  font-size: 16px;
+  color: #495057;
+  border-radius: 8px 0 0 8px;
+  padding: 10px 20px;
+  border: none;
+}
+
+.search_btn {
+  height: 56px;
+  width: 56px;
+  background-image: url(icons/search_icon.png);
+  background-size: 30px;
+  background-position: center;
+  z-index: 100;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  background-repeat: no-repeat;
+  background-color: #F2F3F2;
+}
