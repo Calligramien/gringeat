@@ -1,5 +1,5 @@
 .cards-written-review{
-  min-height: 100vh;
+  min-height: 40vh;
 }
 .card-written-review{
   height: 90px;
@@ -39,11 +39,14 @@
 
 .card-written-review-avatar {
   padding-top: 15px;
+  text-align:center;
+  
 }
 
 .avatar-review {
-  border-radius: 60px;
-  height:40%;
-  width: 90%;
+  object-fit: cover;
+  border-radius: 50px;
+  height:40px;
+  width:40px;
   background-color: rgb(221, 221, 221);
 }

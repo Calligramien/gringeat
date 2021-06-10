@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
-
+    
   end
+
 end
