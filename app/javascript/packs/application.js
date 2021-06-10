@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import Quagga from 'quagga';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -34,9 +35,6 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
-//= require quagga
-//= require_tree .
-
 function order_by_occurrence(arr) {
   var counts = {};
   arr.forEach(function(value){
@@ -45,13 +43,13 @@ function order_by_occurrence(arr) {
       }
       counts[value]++;
   });
-
   return Object.keys(counts).sort(function(curKey,nextKey) {
       return counts[curKey] < counts[nextKey];
   });
 }
 
 function load_quagga(){
+  console.log("load quagga");
   if ($('#barcode-scanner').length > 0 && navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
 
     var last_result = [];
@@ -59,15 +57,25 @@ function load_quagga(){
       Quagga.onDetected(function(result) {
         var last_code = result.codeResult.code;
         last_result.push(last_code);
+        console.log(last_code);
         if (last_result.length > 20) {
-          code = order_by_occurrence(last_result)[0];
+          const code = order_by_occurrence(last_result)[0];
+          console.log(code);
           last_result = [];
           Quagga.stop();
-          $.ajax({
-            type: "POST",
-            url: '/products/get_barcode',
-            data: { upc: code }
-          });
+
+
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", `/product/${code}`, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+
+
+
+          // $.ajax({
+          //   type: "GET",
+          //   url: `/product/${code}`,
+          // });
         }
       });
     }
@@ -76,7 +84,7 @@ function load_quagga(){
       inputStream : {
         name : "Live",
         type : "LiveStream",
-        numOfWorkers: navigator.hardwareConcurrency,
+        numOfWorkers: 1,
         target: document.querySelector('#barcode-scanner')
       },
       decoder: {

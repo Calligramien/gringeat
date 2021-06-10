@@ -3,5 +3,7 @@
 
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
-
-$('.carousel').bcSwipe({ threshold: 50 });
+const carrousselDiv = document.querySelector('.carousel');
+if (carrousselDiv) {
+  $('.carousel').bcSwipe({ threshold: 50 });
+}

@@ -137,17 +137,6 @@
 
 
 
-
-
-<ul class="list-group">
-
-  <% @product.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %> </li> 
-   <% end %>
- </ul>
-
-<%= link_to 'Leave a review', new_product_review_path(@product) %> 
-
 <script src="bootstrap/js/bootstrap.js"></script>
 <script src="jquery.bcSwipe.js"></script>
 
