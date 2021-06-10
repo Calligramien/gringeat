@@ -12,6 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def get_barcode
-    @product = Product.find_by(upc: params[:upc])
+
+    @product = Product.find_or_initialize_by(upc: params[:upc])
   end
+
 end

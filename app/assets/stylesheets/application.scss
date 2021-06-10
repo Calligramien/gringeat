@@ -49,8 +49,8 @@ h4 {
 
 h5 {
     font-family: 'Mulish', sans-serif;
-    font-weight: 600;
-    font-size: 12px; 
+    font-weight: bold;
+    font-size: 16px;
 }
 
 p {
@@ -78,20 +78,7 @@ a:hover {
 /* Responsive Design */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* barcode scanner
+/* barcode scanner*/
 
 
 #barcode-scanner canvas.drawingBuffer, #barcode-scanner video.drawingBuffer {
@@ -104,4 +91,4 @@ a:hover {
 }
 
 
-*/
+
