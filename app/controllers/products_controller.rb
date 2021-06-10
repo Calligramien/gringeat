@@ -10,4 +10,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
+
+  def get_barcode
+    @product = Product.find_by(upc: params[:upc])
+  end
 end
