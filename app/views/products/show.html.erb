@@ -1,13 +1,13 @@
 <div class="product-id">
 <%#CARD IMAGE%>
 
-  <div class="product-id-photo">
-    <i class="fas fa-chevron-left"><%=   %></i>
-    <%= image_tag 'icons/heart_icon', style: 'width:20px', class: 'heart'%>
+  <div class="product-id-photo" style="background-image: url('<%= image_path(@product.image_url) %>')">
+    <i class="fas fa-chevron-left"><%=  %></i>
+    <%= image_tag 'icons/heart_icon', style: 'width:30px', class: 'heart'%>
 
     <div class="label-id">
-      <%= image_tag 'icons/glutenfree_icon', style: 'width:30px', class: 'label'%>
-      <%= image_tag 'icons/leaf_icon', style: 'width:30px',class: 'label'%>
+      <%= image_tag 'icons/glutenfree_icon', style: 'width:40px', class: 'label'%>
+      <%= image_tag 'icons/leaf_icon', style: 'width:40px',class: 'label'%>
     </div>
     
   </div>
@@ -31,11 +31,10 @@
 <%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
     <p><%= @product.generic_name %>.</p>
     <%= link_to "See ingredients" %>
-  
   </div>
-
 </div>
 
+<h5>You might like also..</h5>
 <%# SUGESTIONS SWIPE %>
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
@@ -46,47 +45,23 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="block4-wrap">
+              
+              
                 <div class="block4">
                   <div class="card-review">
-                    <img src="#" alt="image produit" class="img-produit">
+                  <%= image_tag @product.image_url, class: 'img-produit'%>
+
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
 
                       <div class="card-review-name-labels">
-                        <h4>Water</h4>
+                        <h4><%= @product.product_name %></h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
                         </div>
                       </div>
-                      <p>Volvic</p>
-
-                      <div class="card-review-ratings">
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        </br>
-                        <span>(520)</span>
-                      </div> 
-                    </div>
-                  </div>
-                </div>
-
-                                <div class="block4">
-                  <div class="card-review">
-                    <img src="#" alt="image produit" class="img-produit">
-                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
-                    <div class="card-review-infos">
-
-                      <div class="card-review-name-labels">
-                        <h4>Water</h4>
-                        <div class="label">
-                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-                        </div>
-                      </div>
-                      <p>Volvic</p>
+                      <p><%= @product.brands %></p>
 
                       <div class="card-review-ratings">
                         <i class="fas fa-star fa-xs"></i>
@@ -102,18 +77,19 @@
 
                 <div class="block4">
                   <div class="card-review">
-                    <img src="#" alt="image produit" class="img-produit">
+                  <%= image_tag @product.image_url, class: 'img-produit'%>
+
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
 
                       <div class="card-review-name-labels">
-                        <h4>Water</h4>
+                        <h4><%= @product.product_name %></h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
                         </div>
                       </div>
-                      <p>Volvic</p>
+                      <p><%= @product.brands %></p>
 
                       <div class="card-review-ratings">
                         <i class="fas fa-star fa-xs"></i>
@@ -126,15 +102,79 @@
                     </div>
                   </div>
                 </div>
+              
+         
 
       </div>
     </div>
   </div>
 </div>
 
+<div class="container-reviews">
+<h5>Reviews</h5>
+  <div class="cards-written-review">
+    <div class="card-written-review"">
+      <div class="card-written-review-avatar">
+        <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" class="avatar-review">
+        <p>Name</p>
+      </div>
+      <div class="card-written-review-infos">
+        <div class="card-written-review-ratings">
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+        </br>
+        <span>20/10/2035</span>
+      </div> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+    </div>
+  </div> 
+
+    <div class="cards-written-review">
+    <div class="card-written-review"">
+      <div class="card-written-review-avatar">
+        <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" class="avatar-review">
+        <p>Name</p>
+      </div>
+      <div class="card-written-review-infos">
+        <div class="card-written-review-ratings">
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+        </br>
+        <span>20/10/2035</span>
+      </div> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+    </div>
+  </div>
+    <div class="cards-written-review">
+    <div class="card-written-review"">
+      <div class="card-written-review-avatar">
+        <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" class="avatar-review">
+        <p>Name</p>
+      </div>
+      <div class="card-written-review-infos">
+        <div class="card-written-review-ratings">
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+            <i class="fas fa-star fa-xs"></i>
+        </br>
+        <span>20/10/2035</span>
+      </div> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+    </div>
+  </div> 
 
 
-
+<div class="reviews-button">
+  <ul>
+    <li><a href="#" class="other-reviews">See all reviews</a></li>
+    <li><a href="#" class="button-review">Write a review</a></li>
+  </ul>
+</div>
 
 
 <script src="bootstrap/js/bootstrap.js"></script>
