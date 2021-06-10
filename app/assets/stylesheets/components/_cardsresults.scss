@@ -1,7 +1,7 @@
 /*CARDS BEST REVIEW*/
 .cards-result{
-  display:flex;
-  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   height: 200px;
   width: 100%;
@@ -38,7 +38,7 @@
 /*CARD INFOS + IMAGES*/
 
 
-.img-produit-result {
+.card-result .img-produit-result {
   height: 60%;
   width:130px;
   object-fit: cover;
