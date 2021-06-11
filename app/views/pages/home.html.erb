@@ -11,8 +11,9 @@
   <%= submit_tag "", class: "search_btn" %>
 </div>
 <% end %>
-  <!-- link_to "filters_page" !-->
-  <!-- image_tag 'icons/filter_icon', style: 'height:30px', position: 'absolute' !-->
+  <%= link_to "filters_page" do %>
+  <%= image_tag "icons/filter_icon", style: "height:30px; margin:auto;" %>
+<% end %>
 </div>
 <br>
 
@@ -119,13 +120,13 @@
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">
-                        <h4> test </h4>
+                        <h4> Product Name </h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
                         </div>
                       </div>
-                      <p> test </p>
+                      <p> Product Brand </p>
                       <div class="card-review-ratings">
                         <i class="fas fa-star fa-xs"></i>
                         <i class="fas fa-star fa-xs"></i>
@@ -143,13 +144,13 @@
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">
-                        <h4> test </h4>
+                        <h4> Product Name </h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
                         </div>
                       </div>
-                      <p> test </p>
+                      <p> Product Brand </p>
                       <div class="card-review-ratings">
                         <i class="fas fa-star fa-xs"></i>
                         <i class="fas fa-star fa-xs"></i>
@@ -185,13 +186,13 @@
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">
-                        <h4> test </h4>
+                        <h4> Product Name </h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
                         </div>
                       </div>
-                      <p> test </p>
+                      <p> Product Brand </p>
                       <div class="card-review-ratings">
                         <i class="fas fa-star fa-xs"></i>
                         <i class="fas fa-star fa-xs"></i>
@@ -209,13 +210,13 @@
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">
-                        <h4> test </h4>
+                        <h4> Product Name </h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
                         </div>
                       </div>
-                      <p> test </p>
+                      <p> Product Brand </p>
                       <div class="card-review-ratings">
                         <i class="fas fa-star fa-xs"></i>
                         <i class="fas fa-star fa-xs"></i>
@@ -235,8 +236,4 @@
     </div>
   </div>
 </div>
-
-<script src="bootstrap/js/bootstrap.js"></script>
-<script src="jquery.bcSwipe.js"></script>
-
 
