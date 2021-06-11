@@ -9,6 +9,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
+    @review = Review.new
+    @reviews = Review.all
   end
 
   def get_barcode

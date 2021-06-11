@@ -1,5 +1,5 @@
 .cards-written-review{
-  min-height: 40vh;
+  min-height: 30vh;
 }
 .card-written-review{
   height: 90px;
@@ -49,4 +49,9 @@
   height:40px;
   width:40px;
   background-color: rgb(221, 221, 221);
+}
+
+.form-review {
+   min-height: 30vh;
+   text-align: center;
 }
