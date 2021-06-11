@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   get "/product/:code", to: "products#show", as: :product_detail  
   post "/product/:code/reviews", to: "reviews#create"
 
-
-  get "/product/:code", to: "products#show", as: :product_detail
   get "/scan", to: "products#scan", as: :scan
 
 end

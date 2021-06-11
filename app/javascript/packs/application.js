@@ -27,11 +27,11 @@ import "bootstrap";
 
 // Internal imports, e.g:
 
-import { initCaroussel } from '../components/caroussel';
+/* import { initCaroussel } from '../components/caroussel';
 
 document.addEventListener('turbolinks:load', () => {
   initCaroussel();
-});
+}); */
 
 
 function order_by_occurrence(arr) {
