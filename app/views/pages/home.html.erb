@@ -1,4 +1,4 @@
-<h1>HOME</h1>
+<h1>Gring'Eat</h1>
 
 <div class="d-flex">
   <%= form_tag products_path, method: :get do %>
@@ -16,87 +16,196 @@
 </div>
 <br>
 
+    <!--  ● viandes – poissons – œufs,
+          ● produits laitiers,
+          ● matières grasses,
+          ● légumes et fruits,
+          ● céréales et dérivés – légumineuses,
+          ● sucres et produits sucrés,
+          ● boissons. -->
+
 <h6>Explore by Category</h6>
-<div class="d-flex">
-  <%= image_tag 'icons/steack_icon', style: 'width:57px' %>
-  <h6>Steack</h6>
-  <%= image_tag 'icons/vegetables_icon', style: 'width:57px' %>
-  <h6>Vegetables</h6>
-  <%= image_tag 'icons/beverages_icon', style: 'width:57px' %>
-  <h6>Beverages</h6>
-  <%= image_tag 'icons/fish_icon', style: 'width:57px' %>
-  <h6>Fish</h6>
-  <%= image_tag 'icons/wine_icon', style: 'width:57px' %>
-  <h6>Wine</h6>
-</div>
-<br>
-
-<div class="container">
- <h6>Best Ratings</h6>
-<div class="cards-review">
-  <% @products.each do |product| %>
-  <%= link_to product_detail_path(product.code) do %>
-  <div class="card-review">
-    <img src="#" alt="image produit" class="img-produit">
-    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
-    <div class="card-review-infos">
-
-      <div class="card-review-name-labels">
-        <h4>Water</h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-        </div>
-      </div>
-      <p>Volvic</p>
-
-      <div class="card-review-ratings">
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        </br>
-        <span>(520)</span>
-      </div>
+<div class="cards-category">
+  <div class="card-category">
+    <%= image_tag 'icons/steack_icon', class: 'img-category'%>
+    <div class="card-category-info">
+      <p>● Fresh</p>
     </div>
-    <% end %>
-    <% end %>
+  </div>
+   <div class="card-category">
+    <%= image_tag 'icons/dairy-products', class: 'img-category'%>
+    <div class="card-category-info">
+      <p>● Dairy</p>
+    </div>
+  </div>
+   <div class="card-category">
+    <%= image_tag 'icons/fats', class: 'img-category'%>
+    <div class="card-category-info">
+      <p>● Fats</p>
+    </div>
+  </div>
+   <div class="card-category">
+    <%= image_tag 'icons/vegetables_icon', class: 'img-category'%>
+    <div class="card-category-info">
+      <p>● Vegan</p>
+    </div>
+  </div>
+   <div class="card-category">
+    <%= image_tag 'icons/cereals', class: 'img-category'%>
+    <div class="card-category-info">
+      <p>● Cereals</p>
+    </div>
+  </div>
+   <div class="card-category">
+    <%= image_tag 'icons/sweets', class: 'img-category'%>
+    <div class="card-category-info">
+      <p>● Sweet</p>
+    </div>
+  </div>
+   <div class="card-category">
+    <%= image_tag 'icons/drinks', class: 'img-category'%>
+    <div class="card-category-info">
+      <p>● Drinks</p>
+    </div>
   </div>
 </div>
 <br>
 
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="jquery.bcSwipe.js"></script>
 
+<h6>Best Ratings</h6>
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12">
+      <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="block4-wrap">
+                <div class="block4">
+                  <div class="card-review">
+                  <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+                      <div class="card-review-name-labels">
+                        <h4> test </h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p> test </p>
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block4">
+                  <div class="card-review">
+                  <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+                      <div class="card-review-name-labels">
+                        <h4> test </h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p> test </p>
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <h6>Top Researches</h6>
-<div class="cards-review">
-  <% @products.each do |product| %>
-  <%= link_to product_detail_path(product.code) do %>
-  <div class="card-review">
-    <img src="#" alt="image produit" class="img-produit">
-    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
-    <div class="card-review-infos">
-
-      <div class="card-review-name-labels">
-        <h4>Water</h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12">
+      <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="block4-wrap">
+                <div class="block4">
+                  <div class="card-review">
+                  <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+                      <div class="card-review-name-labels">
+                        <h4> test </h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p> test </p>
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block4">
+                  <div class="card-review">
+                  <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+                      <div class="card-review-name-labels">
+                        <h4> test </h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p> test </p>
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <p>Volvic</p>
-
-      <div class="card-review-ratings">
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        </br>
-        <span>(520)</span>
-      </div>
     </div>
-    <% end %>
-    <% end %>
   </div>
 </div>
-</div>
+
+
+
 
