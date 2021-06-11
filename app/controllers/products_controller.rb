@@ -3,13 +3,12 @@ class ProductsController < ApplicationController
     if params[:query].present?
       @products = Openfoodfacts::Product.search(params[:query], locale: 'world', page_size: 5)
     else
-      @products = "pas de produit"
+      render :home
     end
   end
 
   def show
     @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
-    
   end
 
   def get_barcode

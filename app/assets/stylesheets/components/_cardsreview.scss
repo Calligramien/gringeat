@@ -1,7 +1,8 @@
 /*CARDS BEST REVIEW*/
 .cards-review{
-  display:flex;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   height: 200px;
 }
 

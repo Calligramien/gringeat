@@ -11,17 +11,31 @@
   <%= submit_tag "", class: "search_btn" %>
 </div>
 <% end %>
- <!-- image_tag 'icons/filter_icon', style: 'height:30px', position: 'absolute' !-->
+  <!-- link_to "filters_page" !-->
+  <!-- image_tag 'icons/filter_icon', style: 'height:30px', position: 'absolute' !-->
 </div>
 <br>
 
-
+<h6>Explore by Category</h6>
+<div class="d-flex">
+  <%= image_tag 'icons/steack_icon', style: 'width:57px' %>
+  <h6>Steack</h6>
+  <%= image_tag 'icons/vegetables_icon', style: 'width:57px' %>
+  <h6>Vegetables</h6>
+  <%= image_tag 'icons/beverages_icon', style: 'width:57px' %>
+  <h6>Beverages</h6>
+  <%= image_tag 'icons/fish_icon', style: 'width:57px' %>
+  <h6>Fish</h6>
+  <%= image_tag 'icons/wine_icon', style: 'width:57px' %>
+  <h6>Wine</h6>
+</div>
+<br>
 
 <div class="container">
  <h6>Best Ratings</h6>
 <div class="cards-review">
   <% @products.each do |product| %>
-  <%= link_to root_path do %>
+  <%= link_to product_detail_path(product.code) do %>
   <div class="card-review">
     <img src="#" alt="image produit" class="img-produit">
     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
@@ -49,11 +63,14 @@
     <% end %>
   </div>
 </div>
+<br>
+
+
 
 <h6>Top Researches</h6>
 <div class="cards-review">
   <% @products.each do |product| %>
-  <%= link_to root_path do %>
+  <%= link_to product_detail_path(product.code) do %>
   <div class="card-review">
     <img src="#" alt="image produit" class="img-produit">
     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>

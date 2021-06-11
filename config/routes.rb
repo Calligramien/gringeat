@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products, except: :show do 
     resources :reviews, only: [ :new, :create ]
     post :get_barcode, on: :collection
+    resources :reviews, only: [:create ]
   end
 get "/product/:code", to: "products#show", as: :product_detail
 end
