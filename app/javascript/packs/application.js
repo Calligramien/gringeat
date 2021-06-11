@@ -24,9 +24,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import Quagga from 'quagga';
 
 // Internal imports, e.g:
+
 import { initCaroussel } from '../components/caroussel';
 
 document.addEventListener('turbolinks:load', () => {
@@ -96,5 +96,15 @@ function load_quagga() {
   }
 };
 $(document).on('turbolinks:load', load_quagga);
+
+
+
+ import { initScanner } from '../plugins/init_scanner';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2(); 
+  initScanner();
+});
 
 
