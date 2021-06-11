@@ -11,7 +11,7 @@ const initScanner = () => {
             counts[value]++;
         });
         return Object.keys(counts).sort(function(curKey,nextKey) {
-            return counts[curKey] < counts[nextKey];
+            return counts[curKey] > counts[nextKey];
         });
     }
       
@@ -21,12 +21,12 @@ const initScanner = () => {
           var last_result = [];
           if (Quagga.initialized == undefined) {
             Quagga.onDetected(function(result) {
-                document.querySelector('#barcode-scanner').style.border = "3px solid green";
-
               var last_code = result.codeResult.code;
               last_result.push(last_code);
-      
-              if (last_result.length > 20) {
+              if (last_result.length > 15) {
+              document.querySelector('#panel-body').classList.add('code-detected');
+              }
+              if (last_result.length > 30) {
                 const code = order_by_occurrence(last_result)[0];
                 last_result = [];
                 Quagga.stop();
