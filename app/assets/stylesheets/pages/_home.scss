@@ -24,3 +24,10 @@
   background-color: #F2F3F2;
 }
 
+.block2-wrap {
+  display:flex;
+  height: 100px;
+}
+.block2 {
+  flex: 0 0 30%;
+}
