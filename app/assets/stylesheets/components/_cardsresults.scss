@@ -1,7 +1,7 @@
 /*CARDS BEST REVIEW*/
 .cards-result{
   display:flex;
-  justify-content: space-evenly;
+  flex-wrap:wrap;
   align-items: center;
   height: 200px;
   width: 100%;
