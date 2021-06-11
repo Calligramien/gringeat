@@ -81,14 +81,7 @@ a:hover {
 /* barcode scanner*/
 
 
-#barcode-scanner canvas.drawingBuffer, #barcode-scanner video.drawingBuffer {
-  display: none;
-}
 
-#barcode-scanner canvas, #barcode-scanner video {
-  width: 50%;
-  height: auto;
-}
 
 
 
