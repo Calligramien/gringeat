@@ -1,0 +1,5 @@
+<%= form_tag("/product/#{product.code}/reviews", method: :post) do |f| %>
+  <%= text_field_tag :content, nil,  name: 'review[content]' %>
+  <%= number_field_tag :ratings, nil,  name: 'review[ratings]' %>
+  <%= submit_tag "Submit review", class: "btn btn-primary" %>
+<% end %>

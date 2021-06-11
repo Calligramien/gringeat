@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :user
-  belongs_to :product
+  validates :product_code, presence: true
+  validates_uniqueness_of :user_id, :scope => [:product_code] 
 end
