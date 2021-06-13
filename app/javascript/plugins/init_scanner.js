@@ -23,19 +23,37 @@ const initScanner = () => {
             Quagga.onDetected(function(result) {
               var last_code = result.codeResult.code;
               last_result.push(last_code);
-              if (last_result.length > 15) {
-              document.querySelector('#panel-body').classList.add('code-detected');
-              }
-              if (last_result.length > 30) {
+              if (last_result.length > 8) {
+                // After 8 pictures, the scanner turns the bar green meaning that it has recognized something.
+                document.querySelector('#panel-body').classList.add('code-detected');
+                // On the 8 photos, the scanner recovers the occurrence that was most often detected.
                 const code = order_by_occurrence(last_result)[0];
+                // It resets its table for the next scans.
                 last_result = [];
-                Quagga.stop();
-                /* fetch()
-                var xmlHttp = new XMLHttpRequest();
-                xmlHttp.open( "GET", `/product/${code}`, true ); // false for synchronous request
-                xmlHttp.send( null ); */
-                console.log(code)
-                window.location.href = `/product/${code}`;
+
+                // Log of the identified product code.
+                console.log(code);
+
+                // I check the page with the product code to OpenFoodFact.
+                fetch('https://world.openfoodfacts.org/api/v0/product/' + code + '.json')
+                  // If I have a result (and spoiler alert, you will always have one).
+                  .then(res => {
+                    // I have a result, but I can't process it.
+                    // So I turn it into JSON (like an array)
+                    res.json().then(t1 => { 
+                      // If my JSON returns a status 1 => it means that the product REALLY EXISTS in Open Food Fact API.
+                      if(t1.status == 1) {
+                        // We stop the scanner to say "I cut the camera".
+                        Quagga.stop();
+                        // We redirect to the product sheet.
+                        window.location.href = `/products/${t1.code}`; 
+                      }
+                    });
+                    // console.log(res.json().then(t1 => { console.log(t1); }));
+                  })
+                  .catch((out) => {
+                    console.log('Output: ', out);
+                  })
               }
             });
           }
@@ -44,7 +62,7 @@ const initScanner = () => {
             inputStream : {
               name : "Live",
               type : "LiveStream",
-              numOfWorkers: 1,
+              numOfWorkers: 4,
               target: document.querySelector('#barcode-scanner')
             },
             decoder: {
