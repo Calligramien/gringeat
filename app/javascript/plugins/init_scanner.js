@@ -24,26 +24,26 @@ const initScanner = () => {
               var last_code = result.codeResult.code;
               last_result.push(last_code);
               if (last_result.length > 8) {
-                // After 8 pictures, the scanner turns the bar green meaning that it has recognized something.
+                // After 8 photos, the scanner turns the bar green to say that it has found something.
                 document.querySelector('#panel-body').classList.add('code-detected');
-                // On the 8 photos, the scanner recovers the occurrence that was most often detected.
+                // After 8 pictures, he turns the bar green to say that he has found something.
                 const code = order_by_occurrence(last_result)[0];
-                // It resets its table for the next scans.
+                // I reset my table for the next scans.
                 last_result = [];
 
-                // Log of the identified product code.
+                // Identified product code log
                 console.log(code);
 
-                // I check the page with the product code to OpenFoodFact.
+                // I check the page with the product code to OpenFoodFact API.
                 fetch('https://world.openfoodfacts.org/api/v0/product/' + code + '.json')
                   // If I have a result (and spoiler alert, you will always have one).
                   .then(res => {
                     // I have a result, but I can't process it.
-                    // So I turn it into JSON (like an array)
+                    // So I transform it into JSON (like an array).
                     res.json().then(t1 => { 
-                      // If my JSON returns a status 1 => it means that the product REALLY EXISTS in Open Food Fact API.
+                      // If my json returns a status of 1 => it means that the product REALLY EXISTS at OpenFoodFact API.
                       if(t1.status == 1) {
-                        // We stop the scanner to say "I cut the camera".
+                        // We stop the scanner to say "I turn off the camera".
                         Quagga.stop();
                         // We redirect to the product sheet.
                         window.location.href = `/products/${t1.code}`; 

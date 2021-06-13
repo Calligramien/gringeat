@@ -46,3 +46,11 @@ function order_by_occurrence(arr) {
     return counts[curKey] < counts[nextKey];
   });
 }
+
+import { initScanner } from '../plugins/init_scanner';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2(); 
+  initScanner();
+});
