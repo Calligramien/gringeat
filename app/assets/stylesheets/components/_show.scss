@@ -1,5 +1,4 @@
 .product-id{
-  padding-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -10,7 +9,6 @@
   background-color: rgb(221, 221, 221);
   border-radius:15px;
   position:relative;
-  
 }
 
 .fas.fa-chevron-left{
@@ -21,7 +19,7 @@
 
 .product-id-photo .label-id{
   position: absolute;
-  bottom:20px;
+  bottom: -7px;
   width:50%;
   left:25%;
   text-align: center;
@@ -36,11 +34,16 @@
 
 .product-id-photo .heart{
   position: absolute;
-  right: 30px;
-  top:46px;
+  right: 0px;
+  top: 0px;
   background-color: white;
   border-radius:10px;
   padding:5px;
+}
+
+.product-id-photo .heart:hover,
+.product-id-photo .heart:focus {
+  background-color: pink;
 }
 
 .product-id-infos{
