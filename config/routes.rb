@@ -7,10 +7,9 @@ Rails.application.routes.draw do
     resources :favourites, only: [:create ]
   end
 
-
-  
-  get "/product/:code", to: "products#show", as: :product_detail  
-  post "/product/:code/reviews", to: "reviews#create"
+  get '/products/search', to:"products#search"
+  get "/products/:code", to: "products#show", as: :product_detail  
+  post "/products/:code/reviews", to: "reviews#create"
 
   get "/scan", to: "products#scan", as: :scan
 
