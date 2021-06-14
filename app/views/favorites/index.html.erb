@@ -1,0 +1,26 @@
+<div class="cards-result">
+  <% @favorites.each do |favorite| %>
+  <div class="card-result">
+  <%= image_tag favorite.image_small_url, alt: "alttext" %>
+    <div class="card-result-infos">
+    
+      <div class="card-result-name-labels">
+        <h4><%= favorite.product_name  %></h4>
+        <div class="label">
+         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+        </div>
+      </div>
+      <p><% favorite.brands %></p>
+      <div class="card-result-ratings">
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        <i class="fas fa-star fa-xs"></i>
+        </br>
+        <span>(520)</span>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>  
