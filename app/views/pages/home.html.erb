@@ -180,6 +180,7 @@
               <div class="block4-wrap">
                 <div class="block4">
                   <% @most_viewed_products.each do |p| %>
+                    <%= link_to product_detail_path(p.code) do %>
                   <div class="card-review">
                   <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
@@ -203,6 +204,7 @@
                     </div>
                   </div>
                 </div>
+                <% end %>
                 <% end %>
               </div>
             </div>
