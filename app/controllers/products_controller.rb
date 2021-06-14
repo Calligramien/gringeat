@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     end
 
     @review = Review.new
-    @reviews = Review.all
+    @reviews = Review.where(product_code:params[:code])
   end
 
   def get_barcode

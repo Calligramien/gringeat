@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :favourites, only: [:create ]
   end
 
+  get "/favorites", to: "favorites#index", as: :product_favorite_list
   post "/products/:code/favorites", to: "favorites#create", as: :product_favorite 
   delete "/favorites/:id", to: "favorites#destroy"
 
