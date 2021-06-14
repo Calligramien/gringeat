@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  has_many :product_views
   
   def index
     if params[:query].present?
@@ -11,15 +10,16 @@ class ProductsController < ApplicationController
 
   def show
     @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
-    if exist? Product.code 
-      @product = Product.code.views_quantity += 1
-      @product = Product.save
+    @product_view = ProductView.find_by(code:params[:code])
+    if @product_view
+      @product_view.views_quantity += 1
+      @product_view.save
     else 
-      @product = Product.views_quantity.create
-      @product = Product.code.views_quantity += 1
-      @product = Product.save
+      @product_view = ProductView.create(
+        code:params[:code],
+        views_quantity:1
+        )
     end
-
 
     @review = Review.new
     @reviews = Review.all
