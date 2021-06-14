@@ -5,10 +5,12 @@
 .product-id-photo{
   height: 300px;
   width:100%;
-  object-fit: cover;
+  background-position: center;
+  background-size: cover;
   background-color: rgb(221, 221, 221);
   border-radius:15px;
   position:relative;
+  border-style: none;
 }
 
 .fas.fa-chevron-left{
@@ -130,4 +132,9 @@
 .reviews-button li {
     list-style: none;
     padding-top:10px;
+}
+
+.fa-chevron-left{
+  color:white;
+  font-size:30px;
 }
