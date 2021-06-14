@@ -1,4 +1,7 @@
-<h1>Gring'Eat</h1>
+<h1>
+<%= image_tag "icons/cactus", style: "height:40px; margin-bottom: 10px;" %>
+Gringo
+</h1>
 
 <div class="d-flex">
   <%= form_tag products_path, method: :get do %>
@@ -6,7 +9,7 @@
   <%= text_field_tag :query,
     params[:query],
     class: "searchbar",
-    placeholder: "Find a product"
+    placeholder: "Trouver un produit"
   %>
   <%= submit_tag "", class: "search_btn" %>
 </div>
@@ -25,7 +28,7 @@
           ● sucres et produits sucrés,
           ● boissons. -->
 
-<h6>Explore by Category</h6>
+<h6>Explorer par catégories</h6>
 
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
@@ -35,67 +38,21 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="block2-wrap">
-
-                <div class="block2">
-                  <div class="card-category">
-                    <%= image_tag 'icons/steack_icon', class: 'img-category'%>
-                    <div class="card-category-info">
-                      <p>Fresh</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="block2">
-                  <div class="card-category">
-                    <%= image_tag 'icons/dairy-products', class: 'img-category'%>
-                    <div class="card-category-info">
-                      <p>Dairy</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="block2">
-                  <div class="card-category">
-                    <%= image_tag 'icons/fats', class: 'img-category'%>
-                    <div class="card-category-info">
-                      <p>Fats</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="block2">
-                  <div class="card-category">
-                    <%= image_tag 'icons/vegetables_icon', class: 'img-category'%>
-                    <div class="card-category-info">
-                      <p>Vegan</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="block2">
-                  <div class="card-category">
-                    <%= image_tag 'icons/cereals', class: 'img-category'%>
-                    <div class="card-category-info">
-                      <p>Cereals</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="block2">
-                  <div class="card-category">
-                    <%= image_tag 'icons/sweets', class: 'img-category'%>
-                    <div class="card-category-info">
-                      <p>Sweet</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="block2">
-                  <div class="card-category">
-                    <%= image_tag 'icons/drinks', class: 'img-category'%>
-                    <div class="card-category-info">
-                      <p>Drinks</p>
-
                 <a href="https://gringeat.herokuapp.com/products?query=fresh&commit=">
                   <div class="block2">
                     <div class="card-category">
                       <%= image_tag 'icons/steack_icon', class: 'img-category'%>
                       <div class="card-category-info">
-                        <p>Fresh</p>
+                        <p>● Viande</p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="https://gringeat.herokuapp.com/products?query=fresh&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/fish_icon', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>● Poisson</p>
                       </div>
                     </div>
                   </div>
@@ -103,9 +60,18 @@
                 <a href="https://gringeat.herokuapp.com/products?query=dairy&commit=">
                   <div class="block2">
                     <div class="card-category">
-                     <%= image_tag 'icons/dairy-products', class: 'img-category'%>
+                     <%= image_tag 'icons/milk', class: 'img-category'%>
                       <div class="card-category-info">
-                        <p>Dairy</p>
+                        <p>● Lait</p>
+                     </div>
+                   </div>
+                 </div>
+                 <a href="https://gringeat.herokuapp.com/products?query=dairy&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                     <%= image_tag 'icons/eggs', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>● Oeufs</p>
                      </div>
                    </div>
                  </div>
@@ -113,21 +79,37 @@
                 <a href="https://gringeat.herokuapp.com/products?query=fats&commit=">
                   <div class="block2">
                     <div class="card-category">
-                      <%= image_tag 'icons/fats', class: 'img-category'%>
+                      <%= image_tag 'icons/butter', class: 'img-category'%>
                       <div class="card-category-info">
-                        <p>Fats</p>
+                        <p>● Beurre</p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="https://gringeat.herokuapp.com/products?query=fats&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/oil', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>● Huile</p>
                       </div>
                     </div>
                   </div>
                 </a>
-
-
                 <a href="https://gringeat.herokuapp.com/products?query=vegan&commit=">
                   <div class="block2">
                     <div class="card-category">
-                      <%= image_tag 'icons/vegetables_icon', class: 'img-category'%>
+                      <%= image_tag 'icons/fruits', class: 'img-category'%>
                       <div class="card-category-info">
-                        <p>Vegan</p>
+                        <p>● Fruits</p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="https://gringeat.herokuapp.com/products?query=vegan&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/vegetables', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>● Légumes</p>
                       </div>
                     </div>
                   </div>
@@ -137,7 +119,16 @@
                     <div class="card-category">
                       <%= image_tag 'icons/cereals', class: 'img-category'%>
                       <div class="card-category-info">
-                        <p>Cereals</p>
+                        <p>● Céréales</p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="https://gringeat.herokuapp.com/products?query=cereals&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/seeds', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>● Graines</p>
                       </div>
                     </div>
                   </div>
@@ -145,9 +136,18 @@
                 <a href="https://gringeat.herokuapp.com/products?sweet=cereals&commit=">
                   <div class="block2">
                     <div class="card-category">
-                      <%= image_tag 'icons/sweets', class: 'img-category'%>
+                      <%= image_tag 'icons/sugar', class: 'img-category'%>
                       <div class="card-category-info">
-                        <p>Sweet</p>
+                        <p>● Sucre</p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="https://gringeat.herokuapp.com/products?sweet=cereals&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/candy', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>● Bonbons</p>
                       </div>
                     </div>
                   </div>
@@ -157,9 +157,8 @@
                     <div class="card-category">
                       <%= image_tag 'icons/drinks', class: 'img-category'%>
                       <div class="card-category-info">
-                        <p>Drinks</p>
+                        <p>● Boissons</p>
                       </div>
-
                     </div>
                   </div>
                 </a>
@@ -175,7 +174,7 @@
 
 <br>
 
-<h6>Best Ratings</h6>
+<h6>Produits les mieux notés</h6>
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
     <div class="col-12">
@@ -241,7 +240,7 @@
   </div>
 </div>
 
-<h6>Top Researches</h6>
+<h6>Produits les plus recherchés</h6>
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
     <div class="col-12">
