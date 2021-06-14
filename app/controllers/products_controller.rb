@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
+    @product = Openfoodfacts::Product.search(@product.categories, locale: 'fr', page_size: 5)
     @product_view = ProductView.find_by(code:params[:code])
     if @product_view
       @product_view.views_quantity += 1
