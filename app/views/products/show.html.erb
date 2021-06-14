@@ -9,6 +9,8 @@
   <i class="fas fa-chevron-left"></i>
 <% end %>
 
+<%= raise %>
+
 
     <%= image_tag 'icons/heart_icon', style: 'width:30px', class: 'heart'%>
     
@@ -50,7 +52,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="block4-wrap">
-              
+                <% @product.each do |p| %>
               
                 <div class="block4">
                   <div class="card-review">
@@ -60,7 +62,7 @@
                     <div class="card-review-infos">
 
                       <div class="card-review-name-labels">
-                        <h4><%= @product.product_name %></h4>
+                        <h4><%= @p.product_name %></h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
@@ -79,34 +81,8 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="block4">
-                  <div class="card-review">
-                  <%= image_tag @product.image_url, class: 'img-produit'%>
-
-                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
-                    <div class="card-review-infos">
-
-                      <div class="card-review-name-labels">
-                        <h4><%= @product.product_name %></h4>
-                        <div class="label">
-                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-                        </div>
-                      </div>
-                      <p><%= @product.brands %></p>
-
-                      <div class="card-review-ratings">
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        </br>
-                        <span>(520)</span>
-                      </div> 
-                    </div>
-                  </div>
-                </div>
+                <%= end %>
+                <%= end %>
               </div>
             </div>
           </div>
