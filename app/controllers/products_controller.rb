@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     if params[:query].present?
       @products = Openfoodfacts::Product.search(params[:query], locale: 'fr', page_size: 12)
     else
-      render :home
+      redirect_to root_path
     end
   end
 
@@ -19,5 +19,4 @@ class ProductsController < ApplicationController
 
   def scan
   end
-
 end
