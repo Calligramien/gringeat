@@ -9,13 +9,18 @@
   <i class="fas fa-chevron-left"></i>
 <% end %>
 
-
+<% if @favorite %>
+  <%= link_to favorite_destroy_path(@favorite), method: :delete do %>
+    <%= image_tag 'icons/heartfilled_icon', style: 'width:30px', class: 'heart'%>
+ <% end %> 
+<% else %>
+  <%= link_to product_favorite_path(params[:code]), method: :post do %>
     <%= image_tag 'icons/heart_icon', style: 'width:30px', class: 'heart'%>
-    
+  <% end %>
+<% end %>
+
   </div>
-<%= link_to 'Add to favorites', product_favorite_path(params[:code]), method: :post %>
-<br>
-<%= link_to 'Remove from favorites', product_favorite_path(params[:code]), method: :delete %>
+
 <%# CARD INFOS %> 
   <div class="product-id-infos">
 <%#CARD INFOS TITRE %>    

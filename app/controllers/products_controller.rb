@@ -26,6 +26,8 @@ class ProductsController < ApplicationController
 
     @review = Review.new
     @reviews = Review.where(product_code:params[:code])
+
+    @favorite = current_user.favorites.find_by(product_code: @product.code)
   end
 
   def get_barcode
