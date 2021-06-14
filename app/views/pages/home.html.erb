@@ -35,6 +35,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="block2-wrap">
+
                 <div class="block2">
                   <div class="card-category">
                     <%= image_tag 'icons/steack_icon', class: 'img-category'%>
@@ -88,9 +89,80 @@
                     <%= image_tag 'icons/drinks', class: 'img-category'%>
                     <div class="card-category-info">
                       <p>Drinks</p>
+
+                <a href="https://gringeat.herokuapp.com/products?query=fresh&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/steack_icon', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>Fresh</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </a>
+                <a href="https://gringeat.herokuapp.com/products?query=dairy&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                     <%= image_tag 'icons/dairy-products', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>Dairy</p>
+                     </div>
+                   </div>
+                 </div>
+                </a>
+                <a href="https://gringeat.herokuapp.com/products?query=fats&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/fats', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>Fats</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+
+                <a href="https://gringeat.herokuapp.com/products?query=vegan&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/vegetables_icon', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>Vegan</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://gringeat.herokuapp.com/products?query=cereals&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/cereals', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>Cereals</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://gringeat.herokuapp.com/products?sweet=cereals&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/sweets', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>Sweet</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://gringeat.herokuapp.com/products?query=drinks&commit=">
+                  <div class="block2">
+                    <div class="card-category">
+                      <%= image_tag 'icons/drinks', class: 'img-category'%>
+                      <div class="card-category-info">
+                        <p>Drinks</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -178,8 +250,9 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="block4-wrap">
+                <% @most_viewed_products.each do |p| %>
                 <div class="block4">
-                  <% @most_viewed_products.each do |p| %>
+                    <%= link_to product_detail_path(p.code) do %>
                   <div class="card-review">
                   <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
@@ -203,6 +276,7 @@
                     </div>
                   </div>
                 </div>
+                <% end %>
                 <% end %>
               </div>
             </div>
