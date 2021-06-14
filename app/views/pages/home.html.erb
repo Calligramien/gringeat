@@ -194,8 +194,8 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="block4-wrap">
+                <% @most_viewed_products.each do |p| %>
                 <div class="block4">
-                  <% @most_viewed_products.each do |p| %>
                     <%= link_to product_detail_path(p.code) do %>
                   <div class="card-review">
                   <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
