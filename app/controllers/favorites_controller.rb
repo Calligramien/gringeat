@@ -15,8 +15,11 @@ class FavoritesController < ApplicationController
   end
   
   def destroy
-    Favorite.where(favorite_id: @favorite.id, user_id: current_user.id).first.destroy
-    redirect_to product_detail_path(params[:code]), notice: 'Product is no longer in favorites'
+    favorite = Favorite.find(params[:id])
+    product_code = favorite.product_code
+    favorite.destroy
+    redirect_to product_detail_path(product_code), notice: 'Product is no longer in favorites'
   end
   
+
 end
