@@ -21,7 +21,7 @@
 
   .rails-default-error-page div.dialog > div {
     border: 1px solid #FBCEC1;
-    /*border-radius: 15px;*/
+    border-radius: 15px;
     background-color: #FFFFFF;
     padding: 7px 12% 0;
     box-shadow: 1px 2px 5px rgba(217, 218, 217, 0.50);
@@ -52,6 +52,7 @@
     color: #FBCEC1;
     text-decoration: none;
     text-shadow: 0.5px 0.5px 0.5px #343A40;
+    margin-bottom: 4px;
   }
 
   </style>
@@ -62,10 +63,13 @@
   <div class="dialog">
     <div>
       <h1>We're sorry, but something went wrong.</h1>
+      <p>If you are the application owner check the logs for more information.</p>
+      <br>
+      <div>
+        <a href="https://gringeat.herokuapp.com/">Home</a>
+      </div>
+      <br>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-    <br>
-      <a href="https://gringeat.herokuapp.com/">Home</a>
   </div>
 </body>
 </html>
