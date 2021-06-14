@@ -2,8 +2,11 @@ class ProductsController < ApplicationController
   
   def index
     if params[:query].present?
+      session[:search]=params[:query]
       @products = Openfoodfacts::Product.search(params[:query], locale: 'fr', page_size: 12)
-    else
+    elsif session[:search].present?
+      @products = Openfoodfacts::Product.search(session[:search], locale: 'fr', page_size: 12)
+   else
       render "pages/home"
     end
   end
@@ -22,7 +25,7 @@ class ProductsController < ApplicationController
     end
 
     @review = Review.new
-    @reviews = Review.all
+    @reviews = Review.where(product_code:params[:code])
   end
 
   def get_barcode
