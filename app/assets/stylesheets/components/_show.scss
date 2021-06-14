@@ -5,16 +5,20 @@
 .product-id-photo{
   height: 300px;
   width:100%;
-  object-fit: cover;
+  background-position: center;
+  background-size: cover;
   background-color: rgb(221, 221, 221);
   border-radius:15px;
   position:relative;
+  border-style: none;
 }
 
 .fas.fa-chevron-left{
   position: absolute;
   top:50px;
   left:30px;
+  color:white;
+  font-size:30px;
 }
 
 .product-id-photo .label-id{
