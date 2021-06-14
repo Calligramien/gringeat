@@ -43,10 +43,11 @@ ActiveRecord::Schema.define(version: 2021_06_10_154300) do
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "ratings"
-    t.bigint "product_code"
     t.bigint "user_id", null: false
+    t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -68,5 +69,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_154300) do
 
   add_foreign_key "favourites", "products"
   add_foreign_key "favourites", "users"
+  add_foreign_key "reviews", "products"
   add_foreign_key "reviews", "users"
 end
