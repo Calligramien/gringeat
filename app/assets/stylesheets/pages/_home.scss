@@ -1,14 +1,14 @@
 // Specific CSS for your home-page
 .searchbar {
-  width: 70%;
+  width: 80%;
   height: 56px;
   background-color: #F2F3F2;
   text-align: left;
   font-size: 16px;
   color: #495057;
-  border-radius: 8px 0 0 8px;
-  padding: 10px 20px;
-  border: none;
+  border-radius: 8px 0 0 8px !important;
+  padding: 10px 20px !important;
+  border: none !important;
 }
 
 .search_btn {
