@@ -5,7 +5,7 @@
   <div class="product-id-photo" style="background-image: url('<%= image_path(@product.image_url) %>')">
 
 
-<%= link_to request.referer.present? ? request.referer : default_path  do %>
+<%= link_to products_path  do %>
   <i class="fas fa-chevron-left"></i>
 <% end %>
 
@@ -20,8 +20,6 @@
 <% end %>
 
   </div>
-
-
 
 <%# CARD INFOS %> 
   <div class="product-id-infos">
