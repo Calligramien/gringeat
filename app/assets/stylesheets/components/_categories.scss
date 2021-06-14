@@ -25,3 +25,8 @@
   border-radius: 15px;
 } 
 
+.img-category{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:column;
+}
