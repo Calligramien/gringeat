@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     if params[:query].present?
-      @products = Openfoodfacts::Product.search(params[:query], locale: 'world', page_size: 5)
+      @products = Openfoodfacts::Product.search(params[:query], locale: 'fr', page_size: 12)
     else
       render :home
     end
