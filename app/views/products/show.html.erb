@@ -15,7 +15,9 @@
     <%= image_tag 'icons/heart_icon', style: 'width:30px', class: 'heart'%>
     
   </div>
-
+<%= link_to 'Add to favorites', product_favorite_path(params[:code]), method: :post %>
+<br>
+<%= link_to 'Remove from favorites', product_favorite_path(params[:code]), method: :delete %>
 <%# CARD INFOS %> 
   <div class="product-id-infos">
 <%#CARD INFOS TITRE %>    
