@@ -179,18 +179,19 @@
             <div class="carousel-item active">
               <div class="block4-wrap">
                 <div class="block4">
+                  <% @most_viewed_products.each do |p| %>
                   <div class="card-review">
                   <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">
-                        <h4> Product Name </h4>
+                        <h4><%= p.product_name %></h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
                         </div>
                       </div>
-                      <p> Product Brand </p>
+                      <p><%= p.brands %></p>
                       <div class="card-review-ratings">
                         <i class="fas fa-star fa-xs"></i>
                         <i class="fas fa-star fa-xs"></i>
@@ -202,30 +203,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="block4">
-                  <div class="card-review">
-                  <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
-                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
-                    <div class="card-review-infos">
-                      <div class="card-review-name-labels">
-                        <h4> Product Name </h4>
-                        <div class="label">
-                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-                        </div>
-                      </div>
-                      <p> Product Brand </p>
-                      <div class="card-review-ratings">
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        </br>
-                        <span>(520)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
               </div>
             </div>
           </div>

@@ -4,7 +4,8 @@
 <% @products.each do |product| %>
   <%= link_to product_detail_path(product.code) do %>
   <div class="card-result">
-    <img src="<% product.image_url %>" alt="" class="img-produit-result">
+
+    <%= image_tag product.image_small_url, alt: "alttext" %>
     <div class="card-result-infos">
       <div class="card-result-name-labels">
         <h4><%= product.product_name %></h4>
