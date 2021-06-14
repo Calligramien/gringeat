@@ -17,6 +17,8 @@
   position: absolute;
   top:50px;
   left:30px;
+  color:white;
+  font-size:30px;
 }
 
 .product-id-photo .label-id{
@@ -134,7 +136,13 @@
     padding-top:10px;
 }
 
-.fa-chevron-left{
-  color:white;
-  font-size:30px;
+input[type="submit" i] {
+  border-color: white;
+  border-style: none;
+}
+
+input[type="text" i], input[type="number" i] {
+    padding: 1px 2px;
+    border-radius: 5px;
+    border: 1px solid #939394;
 }

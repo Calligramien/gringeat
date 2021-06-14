@@ -1,4 +1,4 @@
-
+<div class="main-container">
 <div class="product-id">
 <%#CARD IMAGE%>
 
@@ -10,12 +10,9 @@
 <% end %>
 
 
-    <%= image_tag 'icons/heart_icon', style: 'width:30px', class: 'heart'%>
 
-    <div class="label-id">
-      <%= image_tag 'icons/glutenfree_icon', style: 'width:40px', class: 'label'%>
-      <%= image_tag 'icons/leaf_icon', style: 'width:40px',class: 'label'%>
-    </div>
+
+    <%= image_tag 'icons/heart_icon', style: 'width:30px', class: 'heart'%>
     
   </div>
 
@@ -63,6 +60,7 @@
                     <div class="card-review-infos">
 
                       <div class="card-review-name-labels">
+                        <h4><%= @product.product_name %></h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
@@ -90,6 +88,7 @@
                     <div class="card-review-infos">
 
                       <div class="card-review-name-labels">
+                        <h4><%= @product.product_name %></h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
@@ -108,9 +107,10 @@
                     </div>
                   </div>
                 </div>
-              
-         
-
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -122,8 +122,6 @@
 
   <div class="cards-written-review">
   <% @reviews.each do |review| %>
-
-    <div class="cards-written-review">
 
     <div class="card-written-review">
       <div class="card-written-review-avatar">
@@ -138,6 +136,8 @@
               <% ( 5 - review.ratings).times do %>
                 <i class="far fa-star fa-xs"></i>
               <%end%>
+
+
             </br>
             <span>20/10/2035</span>
         </div> 
@@ -151,7 +151,6 @@
   <div class="reviews-button">
     <ul>
       <li><a href="#" class="other-reviews">See all reviews</a></li>
-      <li><a href="#" class="button-review">Write a review</a></li>
     </ul>
   </div>
 </div> 
@@ -161,5 +160,9 @@
 <div class="form-review">
 <%= render "reviews/new", review: @review, product: @product %>
 </div>
+</div>
 
-
+</div>
+</div>
+</div>
+</div>
