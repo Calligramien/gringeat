@@ -1,4 +1,179 @@
 <div class="main-container">
+
+<div class="product-id">
+<%#CARD IMAGE%>
+
+  <div class="product-id-photo" style="background-image: url('<%= image_path(@product.image_url) %>')">
+
+
+<%= link_to products_path  do %>
+  <i class="fas fa-chevron-left"></i>
+<% end %>
+
+<% if @favorite %>
+  <%= link_to favorite_destroy_path(@favorite), method: :delete do %>
+    <%= image_tag 'icons/heartfilled_icon', style: 'width:30px', class: 'heart'%>
+ <% end %> 
+<% else %>
+  <%= link_to product_favorite_path(params[:code]), method: :post do %>
+    <%= image_tag 'icons/heart_icon', style: 'width:30px', class: 'heart'%>
+  <% end %>
+<% end %>
+
+  </div>
+
+<%# CARD INFOS %> 
+  <div class="product-id-infos">
+<%#CARD INFOS TITRE %>    
+    <div class="product-id-infos-titre">
+      <h4><%= @product.product_name %></h4>
+      <div class="card-review-ratings">
+     
+          <i class="fas fa-star fa-xs"></i>
+          <i class="fas fa-star fa-xs"></i>
+          <i class="fas fa-star fa-xs"></i>
+          <i class="fas fa-star fa-xs"></i>
+          </br>
+          <span>(520)</span>
+      </div> 
+    </div>
+  <p><%= @product.brands %></p>
+
+<%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
+    <p><%= @product.generic_name %></p>
+    <%= link_to "See ingredients", id: "togg1"%>
+    <div id="d1">
+        <p><%= @product.ingredients_text %></p>
+    </div>
+  </div>
+</div>
+
+<h5>You might like also..</h5>
+<%# SUGESTIONS SWIPE %>
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12">
+      <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="block4-wrap">
+              
+              
+                <div class="block4">
+                  <div class="card-review">
+                  <%= image_tag @product.image_url, class: 'img-produit'%>
+
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+
+                      <div class="card-review-name-labels">
+                        <h4><%= @product.product_name %></h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p><%= @product.brands %></p>
+
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="block4">
+                  <div class="card-review">
+                  <%= image_tag @product.image_url, class: 'img-produit'%>
+
+                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <div class="card-review-infos">
+
+                      <div class="card-review-name-labels">
+                        <h4><%= @product.product_name %></h4>
+                        <div class="label">
+                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                        </div>
+                      </div>
+                      <p><%= @product.brands %></p>
+
+                      <div class="card-review-ratings">
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        <i class="fas fa-star fa-xs"></i>
+                        </br>
+                        <span>(520)</span>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-reviews">
+<h5>Reviews</h5>
+
+
+  <div class="cards-written-review">
+  <% @reviews.each do |review| %>
+
+    <div class="card-written-review">
+      <div class="card-written-review-avatar">
+        <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" class="avatar-review">
+        <p><%= review.user_id%></p>
+      </div>
+      <div class="card-written-review-infos">
+        <div class="card-written-review-ratings">
+              <% review.ratings.times do %>
+                <i class="fas fa-star fa-xs"></i>
+              <%end%>
+              <% ( 5 - review.ratings).times do %>
+                <i class="far fa-star fa-xs"></i>
+              <%end%>
+
+
+            </br>
+            <span>20/10/2035</span>
+        </div> 
+
+      <p><%= review.content %></p> 
+    </div>
+  <% end %>
+  </div> 
+
+
+  <div class="reviews-button">
+    <ul>
+      <li><a href="#" class="other-reviews">See all reviews</a></li>
+    </ul>
+  </div>
+</div> 
+</div>
+
+
+<div class="form-review">
+<%= render "reviews/new", review: @review, product: @product %>
+</div>
+</div>
+
+</div>
+</div>
+
     <div class="product-id">
         <div class="product-id-photo" style="background-image: url('<%= @product.image_url %>')">
 			<%= link_to products_path  do %>
