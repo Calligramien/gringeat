@@ -39,8 +39,11 @@
   <p><%= @product.brands %></p>
 
 <%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
-    <p><%= @product.generic_name %>.</p>
-    <%= link_to "See ingredients" %>
+    <p><%= @product.generic_name %></p>
+    <%= link_to "See ingredients", id: "togg1"%>
+    <div id="d1">
+        <p><%= @product.ingredients_text %></p>
+    </div>
   </div>
 </div>
 
