@@ -1,0 +1,38 @@
+<!-- <p> Find me in app/views/devise/registrations/edit.html.erb </p> -->
+<div class="profile-container">
+  <%= image_tag 'Dmn', class: "avatar-giant"%>
+  <br>
+
+  <h4> <%= @user.email %></h4>
+  <br>
+
+  <div class="flexbox">
+    <div class="d-flex">
+      <%= link_to "Modifier le profil", edit_user_registration_path, 
+      class: "searchform" 
+      %>
+     <%= submit_tag "", class: "profile_btn" %>
+   </div>
+
+   <div class="d-flex">
+     <%= link_to "Réglages", '/422.html',
+     class: "searchform"
+     %>
+     <%= submit_tag "", class: "setting_btn" %>
+   </div>
+
+   <div class="d-flex">
+     <%= link_to "Confidentialité", '/422.html',
+     class: "searchform"
+     %>
+     <%= submit_tag "", class: "privacy_btn" %>
+   </div>
+
+   <div class="d-flex">
+     <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete,
+     class: "searchform"
+     %>
+     <%= submit_tag "", class: "logout_btn" %>
+   </div>
+ </div>
+</div>
