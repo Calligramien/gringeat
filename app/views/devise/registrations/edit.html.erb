@@ -2,14 +2,69 @@
     <div class="profile-container">
 
 
+    <%= image_tag 'Dmn', class: "avatar-giant"%>
+<br>
+<h4> Damien Gautier </h4>
+<br>
+<div class="flexbox">
+  <%= form_tag products_path, method: :get do %>
+  <div class="d-flex">
+    <%= text_field_tag :query,
+    params[:query],
+    class: "searchform",
+      placeholder: "Modifier le profil"
+    %>
+    <%= submit_tag "", class: "profile_btn" %>
+  </div>
+  <% end %>
+  <br>
 
-    <%= image_tag 'Klementina', class: "avatar-giant"%>
-      <div class="fullname"><% @user.last_name %><% @user.first_name %>
+  <%= form_tag products_path, method: :get do %>
+  <div class="d-flex">
+    <%= text_field_tag :query,
+    params[:query],
+    class: "searchform",
+      placeholder: "Réglages"
+    %>
+    <%= submit_tag "", class: "setting_btn" %>
+
+  </div>
+
+  <% end %>
+  <br>
+
+  <%= form_tag products_path, method: :get do %>
+  <div class="d-flex">
+    <%= text_field_tag :query,
+    params[:query],
+    class: "searchform",
+      placeholder: "Conditions & politique..... de confidentialité"
+    %>
+    <%= submit_tag "", class: "privacy_btn" %>
+  </div>
+  <% end %>
+  <br>
+
+  <%= form_tag products_path, method: :get do %>
+  <div class="d-flex">
+    <%= text_field_tag :query,
+    params[:query],
+    class: "searchform",
+      placeholder: " Se déconnecter"
+    %>
+    <%= submit_tag "", class: "logout_btn" %>
+  </div>
+  <% end %>
+</div>
+<br>
+      <!-- <div class="fullname"><% @user.last_name %><% @user.first_name %>
       </div>
       <br>
 
     <div class="profil-options">
-      <p><i class="far fa-user"></i> Modifier le profil</p>
+      <p><i class="far fa-user"></i>
+
+
       <br>
       <p><i class="fas fa-cog"></i> Réglages</p>
       <br>
@@ -19,7 +74,7 @@
       <br>
 
     </div>
-</div>
+</div> -->
 
 <!--
 
