@@ -41,6 +41,17 @@ class ProductsController < ApplicationController
     @reviews = Review.where(product_code:params[:code])
 
     @favorite = current_user.favorites.find_by(product_code: @product.code)
+
+    sumratings = 0
+
+    if @reviews
+      @reviews.each do |review|
+        sumratings += review.ratings
+      end
+      @average = sumratings / @reviews.count
+    end
+
+
   end
 
   def get_barcode
