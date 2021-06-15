@@ -1,62 +1,43 @@
 <!-- <p> Find me in app/views/devise/registrations/edit.html.erb </p> -->
-    <div class="profile-container">
-
-
-    <%= image_tag 'Dmn', class: "avatar-giant"%>
-<br>
-<h4> Damien Gautier </h4>
-<br>
-<div class="flexbox">
-  <%= form_tag products_path, method: :get do %>
-  <div class="d-flex">
-    <%= text_field_tag :query,
-    params[:query],
-    class: "searchform",
-      placeholder: "Modifier le profil"
-    %>
-    <%= submit_tag "", class: "profile_btn" %>
-  </div>
-  <% end %>
+<div class="profile-container">
+  <%= image_tag 'Dmn', class: "avatar-giant"%>
   <br>
 
-  <%= form_tag products_path, method: :get do %>
-  <div class="d-flex">
-    <%= text_field_tag :query,
-    params[:query],
-    class: "searchform",
-      placeholder: "Réglages"
-    %>
-    <%= submit_tag "", class: "setting_btn" %>
-
-  </div>
-
-  <% end %>
+  <h4> Damien Gautier </h4>
   <br>
 
-  <%= form_tag products_path, method: :get do %>
-  <div class="d-flex">
-    <%= text_field_tag :query,
-    params[:query],
-    class: "searchform",
-      placeholder: "Conditions & politique..... de confidentialité"
-    %>
-    <%= submit_tag "", class: "privacy_btn" %>
-  </div>
-  <% end %>
-  <br>
-
-  <%= form_tag products_path, method: :get do %>
-  <div class="d-flex">
-    <%= text_field_tag :query,
-    params[:query],
-    class: "searchform",
-      placeholder: " Se déconnecter"
-    %>
-    <%= submit_tag "", class: "logout_btn" %>
-  </div>
-  <% end %>
+  <div class="flexbox">
+    <div class="d-flex">
+      <%= link_to "Modifier le profil", '/422.html',
+     class: "searchform"
+     %>
+     <%= submit_tag "", class: "profile_btn" %>
+   </div>
+   <br>
+   <div class="d-flex">
+     <%= link_to "Réglages", '/422.html',
+     class: "searchform"
+     %>
+     <%= submit_tag "", class: "setting_btn" %>
+   </div>
+   <br>
+   <div class="d-flex">
+     <%= link_to "Confidentialité", '/422.html',
+     class: "searchform"
+     %>
+     <%= submit_tag "", class: "privacy_btn" %>
+   </div>
+   <br>
+   <div class="d-flex">
+     <%= link_to "Se déconnecter", '/422.html',
+     class: "searchform"
+     %>
+     <%= submit_tag "", class: "logout_btn" %>
+   </div>
+ </div>
 </div>
-<br>
+
+
       <!-- <div class="fullname"><% @user.last_name %><% @user.first_name %>
       </div>
       <br>
@@ -114,3 +95,36 @@
 
 <%= link_to "Back", :back %>
  -->
+
+<!-- <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query", placeholder="Modifier le profil" />
+    <button name="button" type="submit" class="btn btn-flat">
+    </button>
+  </div>
+</form>
+<br>
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query", placeholder="Réglages" />
+    <button name="button" type="submit" class="btn btn-flat">
+    </button>
+  </div>
+</form>
+<br>
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query", placeholder="Conditions & politique de confidentialité" />
+    <button name="button" type="submit" class="btn btn-flat">
+    </button>
+  </div>
+</form>
+<br>
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query", placeholder="Se déconnecter" />
+    <button name="button" type="submit" class="btn btn-flat">
+    </button>
+  </div>
+</form>
+<br> -->
