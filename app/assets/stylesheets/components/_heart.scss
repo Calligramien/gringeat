@@ -1,4 +1,4 @@
-$size: 18vh;
+$size: 30px;
 
 .action {
     height: $size;
@@ -9,7 +9,10 @@ $size: 18vh;
     bottom: 0;
   }
   
-  .love { left: 15vw; }
+  .love { 
+    left: 73vw; 
+    bottom: auto;
+}
   
   .send {
     background: url('https://cbwconline.com/IMG/Codepen/Send-Grey.svg') center/contain no-repeat;
