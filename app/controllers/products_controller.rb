@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     # récupérer le produit scanné ou sélectionné et afficher la page produit
     @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
 
