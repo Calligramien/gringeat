@@ -4,6 +4,7 @@ class FavoritesController < ApplicationController
      @favorites = Favorite.all.map do |f|
       Openfoodfacts::Product.get(f.product_code, locale: 'fr')
      end
+    @favorite = Favorite.all
   end
   
   def create

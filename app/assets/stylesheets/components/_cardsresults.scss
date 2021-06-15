@@ -15,6 +15,7 @@
   margin-right:10px;
   margin-left: 10px;
   margin-top: 60px;
+  position: relative;
 }
 
 /*FONT*/
@@ -79,4 +80,12 @@
 .card-result-infos i {
   display: inline-block;
   color:#FAD41B;
+}
+
+.bin{ 
+  position:absolute;
+  top:10px;
+  right:10px;
+  background-color: rgb(221, 221, 221);
+  border-radius: 15px;
 }
