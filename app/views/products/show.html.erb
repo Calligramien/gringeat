@@ -27,6 +27,7 @@
     <div class="product-id-infos-titre">
       <h4><%= @product.product_name %></h4>
       <div class="card-review-ratings">
+        <% if @average %>
             <% @average.times do %>
             <i class="fas fa-star fa-xs"></i>
             <% end %>
@@ -35,6 +36,7 @@
             <% end %>
           </br>
           <span>(<%= @reviews.count %>)</span>
+          <% end %>
 
 
       </div> 

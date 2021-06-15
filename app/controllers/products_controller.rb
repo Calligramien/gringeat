@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
 
     sumratings = 0
 
-    if @reviews
+    if @reviews.count > 0
       @reviews.each do |review|
         sumratings += review.ratings
       end
