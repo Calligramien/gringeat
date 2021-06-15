@@ -9,7 +9,6 @@
 <%= link_to products_path  do %>
   <i class="fas fa-chevron-left"></i>
 <% end %>
-
 <% if @favorite %>
   <%= link_to favorite_destroy_path(@favorite), method: :delete do %>
     <%= image_tag 'icons/heartfilled_icon', style: 'width:30px', class: 'heart'%>
@@ -41,14 +40,11 @@
 
 <%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
     <p><%= @product.generic_name %></p>
-    <%= link_to "See ingredients", id: "togg1"%>
-    <div id="d1">
-        <p><%= @product.ingredients_text %></p>
-    </div>
-  </div>
+    <%= link_to "See ingredients"%>
+
 </div>
 
-<h5>You might like also..</h5>
+<h5>Vous aimeriez aussi..</h5>
 <%# SUGESTIONS SWIPE %>
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
