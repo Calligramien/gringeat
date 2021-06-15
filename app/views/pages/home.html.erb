@@ -238,12 +238,16 @@ Gringo!
                       </div>
                       <p><%= p.brands %></p>
                       <div class="card-review-ratings">
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        </br>
-                        <span>(520)</span>
+        <% if @products_datas[p.code] %>
+          <% @products_datas[p.code][:average_rating].times do %>
+            <i class="fas fa-star fa-xs"></i>
+          <% end %>
+          <% ( 5 - @products_datas[p.code][:average_rating]).times do %>
+            <i class="far fa-star fa-xs"></i>
+          <% end %>
+        </br>
+        <span><%= @products_datas[p.code][:reviews_count] %></span>
+        <% end %>
                       </div>
                     </div>
                   </div>
