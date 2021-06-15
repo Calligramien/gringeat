@@ -92,13 +92,22 @@
   height: 120px;
 }
 .block4 {
-	flex:1 0 25%;
+	max-width: 250px;
+    flex: 1 0 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
 }
 .my-captions{margin:10px;padding-bottom:3em}
 
 /* fix width and make user scroll with mouse/touch to see the items */
 @media screen and (max-width:768px){
-	.block4{max-width:500px;flex:1 0 100%;overflow:hidden}	
+	.block4{max-width: 250px;
+    flex: 1 0 80%;
+    margin-right: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: start;}	
 	.carousel{overflow:hidden;}
 	.carousel-inner{overflow-x:visible;}
 }
