@@ -1,16 +1,28 @@
+<h4 class="favh4">Favourites</h4>
+
 <div class="cards-result">
   <% @favorites.each do |favorite| %>
+
   <div class="card-result">
-  <%= image_tag favorite.image_small_url, alt: "alttext" %>
+  <%= link_to product_detail_path(favorite.code) do %>
+  <%= image_tag favorite.image_small_url, alt: "alttext", class: "img-produit-result" %>
+
+  <% @favorite.each do |favorite| %>
+  <%= link_to favorite_destroy_path(favorite.id), method: :delete do %>
+    <%= image_tag 'icons/bin_icon', style: 'width:16px', class: 'bin'%>
+  <% end %>
+  <% end %>
+
+
     <div class="card-result-infos">
-    
       <div class="card-result-name-labels">
-        <h4><%= favorite.product_name  %></h4>
+        <h4><%= favorite.product_name[0,30]  %></h4>
         <div class="label">
          <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
          <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
         </div>
       </div>
+
       <p><% favorite.brands %></p>
       <div class="card-result-ratings">
         <i class="fas fa-star fa-xs"></i>
@@ -23,4 +35,6 @@
     </div>
   </div>
   <% end %>
+  <% end %>
+        
 </div>  

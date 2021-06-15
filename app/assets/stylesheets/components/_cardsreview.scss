@@ -2,13 +2,14 @@
 .cards-review{
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: flex-start;
   height: 200px;
 }
 
 .card-review{
   height: 90px;
-  width:230px;
+  width:250px;
   display: flex;
   box-shadow: 1px 2px 5px rgba(217, 218, 217, 0.50);
   border-radius: 15px;
@@ -36,7 +37,7 @@
 
 .card-review .img-produit {
   height: 100%;
-  width: 80%;
+  width: 40%;
   object-fit: cover;
   background-color: rgb(221, 221, 221);
   border-radius: 15px;

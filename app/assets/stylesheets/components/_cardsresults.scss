@@ -15,6 +15,7 @@
   margin-right:10px;
   margin-left: 10px;
   margin-top: 60px;
+  position: relative;
 }
 
 /*FONT*/
@@ -55,25 +56,36 @@
 .card-result-name-labels {
    display:flex;
    justify-content: space-between;
-   align-items: center;
+   align-items: start;
 }
 .card-result-name-labels .label {
-  padding-left: 10px;
+  padding-left: 5px;
+  display:flex;
+  align-items: start;
+  
 }
 
 .card-result-name-labels .label img{
    border: 1px solid gray;
    border-radius: 50px;
    padding:3px;
+   margin-left: 4px;
    margin-bottom: 3px;
 }
 
 .card-result-ratings{
   display:flex;
   align-items:center;
-  padding-left:2px;
 }
 .card-result-infos i {
   display: inline-block;
   color:#FAD41B;
+}
+
+.bin{ 
+  position:absolute;
+  top:10px;
+  right:10px;
+  background-color: rgb(221, 221, 221);
+  border-radius: 15px;
 }
