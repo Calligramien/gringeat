@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   get "/favorites", to: "favorites#index", as: :product_favorite_list
+  post "products/:code/toggle_favorite", to: "favorites#toggle_favorite", as: :toggle_favorite
   post "/products/:code/favorites", to: "favorites#create", as: :product_favorite 
   delete "/favorites/:id", to: "favorites#destroy", as: :favorite_destroy
 

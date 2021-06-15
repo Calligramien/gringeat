@@ -15,6 +15,15 @@ class FavoritesController < ApplicationController
     end
   end
   
+  def toggle_favorite
+    product = params[:code]
+    if Favorite.find_by(product_code: product)
+      Favorite.find_by(product_code: product).destroy
+    else
+      Favorite.create!(product_code: params[:code], user: current_user)
+    end
+  end
+
   def destroy
     favorite = Favorite.find(params[:id])
     product_code = favorite.product_code
