@@ -28,13 +28,16 @@
     <div class="product-id-infos-titre">
       <h4><%= @product.product_name %></h4>
       <div class="card-review-ratings">
-     
-          <i class="fas fa-star fa-xs"></i>
-          <i class="fas fa-star fa-xs"></i>
-          <i class="fas fa-star fa-xs"></i>
-          <i class="fas fa-star fa-xs"></i>
+            <% @average.times do %>
+            <i class="fas fa-star fa-xs"></i>
+            <% end %>
+            <% ( 5 - @average).times do %>
+            <i class="far fa-star fa-xs"></i>
+            <% end %>
           </br>
-          <span>(520)</span>
+          <span>(<%= @reviews.count %>)</span>
+
+
       </div> 
     </div>
   <p><%= @product.brands %></p>
