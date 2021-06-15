@@ -13,23 +13,23 @@
      %>
      <%= submit_tag "", class: "profile_btn" %>
    </div>
-   <br>
+
    <div class="d-flex">
      <%= link_to "Réglages", '/422.html',
      class: "searchform"
      %>
      <%= submit_tag "", class: "setting_btn" %>
    </div>
-   <br>
+
    <div class="d-flex">
      <%= link_to "Confidentialité", '/422.html',
      class: "searchform"
      %>
      <%= submit_tag "", class: "privacy_btn" %>
    </div>
-   <br>
+
    <div class="d-flex">
-     <%= link_to "Se déconnecter", '/422.html',
+     <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete,
      class: "searchform"
      %>
      <%= submit_tag "", class: "logout_btn" %>
