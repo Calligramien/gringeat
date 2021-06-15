@@ -48,11 +48,13 @@ function order_by_occurrence(arr) {
 }
 
 import { initScanner } from '../plugins/init_scanner';
+import { initHeart } from '../components/heartbtn';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2(); 
   initScanner();
+  initHeart();
 });
 
 let togg1 = document.getElementById("togg1");
