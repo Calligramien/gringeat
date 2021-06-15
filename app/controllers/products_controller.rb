@@ -12,7 +12,19 @@ class ProductsController < ApplicationController
   end
 
   def show
+    # récupérer le produit scanné ou sélectionné et afficher la page produit
     @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
+
+    # on récupère la liste des catégories en string et on la transforme en array
+    categories = @product.categories.split(",") 
+    min_index = 0
+    max_index = categories.length - 1 # on soustrait 1 car un array, son index démarre à 0    
+    godOfRandom = rand(min_index..max_index)
+    @keywords = categories[min_index] + ", " + categories[godOfRandom]
+
+    # permet de faire une recherche par catégorie et afficher des produits qui pourraient intéressé
+    @products = Openfoodfacts::Product.search(@keywords, locale: 'fr', page_size: 5)
+    
     @product_view = ProductView.find_by(code:params[:code])
     if @product_view
       @product_view.views_quantity += 1
