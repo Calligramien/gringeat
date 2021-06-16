@@ -156,54 +156,37 @@ Gringo!
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="block4-wrap">
+                <% @ratings_datas.each do |data| %>
+              
                 <div class="block4">
                   <div class="card-review">
-                  <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
+                    <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">
-                        <h4> Product Name </h4>
+                        <h4> <%= data[:product].product_name[0,28] %>...</h4>
                         <div class="label">
                         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
                         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
                         </div>
                       </div>
-                      <p> Product Brand </p>
+                      <p> <%= data[:product].brands %> </p>
                       <div class="card-review-ratings">
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        </br>
-                        <span>(520)</span>
+                        <% if data[:product].code %>
+                          <% data[:average_rating].times do %>
+                              <i class="fas fa-star fa-xs"></i>
+                          <% end %>
+                          <% ( 5 - data[:average_rating]).times do %>
+                            <i class="far fa-star fa-xs"></i>
+                          <% end %>
+                          </br>
+                          <span><%= data[:reviews_count] %></span>
+                        <% end %>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="block4">
-                  <div class="card-review">
-                  <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
-                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
-                    <div class="card-review-infos">
-                      <div class="card-review-name-labels">
-                        <h4> Product Name </h4>
-                        <div class="label">
-                        <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-                        <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-                        </div>
-                      </div>
-                      <p> Product Brand </p>
-                      <div class="card-review-ratings">
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        <i class="fas fa-star fa-xs"></i>
-                        </br>
-                        <span>(520)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
               </div>
             </div>
           </div>
@@ -226,7 +209,7 @@ Gringo!
                 <div class="block4">
                     <%= link_to product_detail_path(p.code) do %>
                   <div class="card-review">
-                  <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
+                  <%= image_tag p.image_small_url, alt: "alttext",class: 'img-produit'%>
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">

@@ -24,13 +24,16 @@
       </div>
 
       <p><% favorite.brands %></p>
-      <div class="card-result-ratings">
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
-        <i class="fas fa-star fa-xs"></i>
+      <% if @products_datas[favorite.code] %>
+          <% @products_datas[favorite.code][:average_rating].times do %>
+            <i class="fas fa-star fa-xs"></i>
+          <% end %>
+          <% ( 5 - @products_datas[favorite.code][:average_rating]).times do %>
+            <i class="far fa-star fa-xs"></i>
+          <% end %>
         </br>
-        <span>(520)</span>
+        <span><%= @products_datas[favorite.code][:reviews_count] %></span>
+        <% end %>
       </div>
     </div>
   </div>

@@ -5,10 +5,10 @@
   <%= link_to product_detail_path(product.code) do %>
   <div class="card-result">
 
-    <%= image_tag product.image_small_url, alt: "alttext" %>
+    <%= image_tag product.image_small_url, alt: "alttext", class: "img-produit-result" %>
     <div class="card-result-infos">
       <div class="card-result-name-labels">
-        <h4><%= product.product_name %></h4>
+        <h4><%= product.product_name[0,20] %></h4>
         <div class="label">
          <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
          <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>

@@ -4,7 +4,21 @@ class FavoritesController < ApplicationController
      @favorites = Favorite.all.map do |f|
       Openfoodfacts::Product.get(f.product_code, locale: 'fr')
      end
-      @favorite = Favorite.all
+    @favorite = Favorite.all
+
+    @products_datas = {}
+    @favorites.each do |f|
+      product_reviews = Review.where(product_code: f.code)
+      sumratings = 0
+      if product_reviews.count > 0
+        @products_datas[f.code] = {}
+        product_reviews.each do |review|
+          sumratings += review.ratings
+        end
+        @products_datas[f.code][:average_rating] = sumratings / product_reviews.count
+        @products_datas[f.code][:reviews_count] = product_reviews.count
+      end
+      end  
   end
   
   def create
