@@ -4,8 +4,8 @@
   height: 100px;
 }
 .card-category{
-  height: 77px;
-  width:55px;
+  height: 80px;
+  width:60px;
   border-radius: 15px;
   margin-right: 15px;
 }
@@ -14,6 +14,8 @@
   font-size: 10px;
   margin-top: 5px;
   text-align: center;
+  padding-right:5px;
+  font-weight: 600;
 }
 
 .card-category .img-category {
@@ -21,7 +23,6 @@
   width: 50px;
   padding: 5px;
   object-fit: cover;
-  background-color: rgb(221, 221, 221);
   border-radius: 15px;
 } 
 

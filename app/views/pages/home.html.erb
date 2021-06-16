@@ -1,22 +1,22 @@
 <h4>
-	<%= image_tag "icons/cactus_icon", style: "height:60px; margin-bottom: 10px;" %>
-Gringo!
+	<%# <%= image_tag "icons/cactus_icon", style: "height:45px; margin-bottom: 20px;" %>
 </h4>
 
-<div class="d-flex">
+<div class="d-flex mb-2">
 	<%= form_tag products_path, method: :get do %>
-	<div class="d-flex">
-		<%= text_field_tag :query,params[:query],class: "searchbar",placeholder: "Trouver un produit"  %>
+	<div class="d-flex ">
+		<%= text_field_tag :query,params[:query],class: "searchbar",placeholder: "Trouver un produit.."  %>
 		<%= submit_tag "", class: "search_btn" %>
 	</div>
 	<% end %>
 	<%= link_to "filters_page" do %>
-	<%# 
+
 	<%= image_tag "icons/filter_icon", style: "height:30px; margin:auto;" %>
 	<% end %>
 </div>
-<br>
-<!--  ● viandes – poissons – œufs,● produits laitiers,● matières grasses,● légumes et fruits,● céréales et dérivés – légumineuses,● sucres et produits sucrés,● boissons. -->
+
+
+<div class="container-category">
 <h6>
 	Explorer par catégories
 </h6>
@@ -31,7 +31,7 @@ Gringo!
 								<a href="<%= url_for(:controller => "products", :action => "index", :query => "steack") %>">
 									<div class="block2">
 										<div class="card-category">
-											<%= image_tag 'icons/steack_icon', class: 'img-category'%>
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/steak.png"/> 
 											<div class="card-category-info">
 												<p>
 													Viande
@@ -39,125 +39,127 @@ Gringo!
 											</div>
 										</div>
 									</div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "poisson") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/fish', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
-                          Poisson
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "lait entier bouteille") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/milk', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
-                          Lait
-                        </p>
-                    </div>
-                  </div>
-                </div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "oeufs calibre") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/eggs', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
-                          Oeufs
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "beurre plaquette") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/butter', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
-                          Beurre
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "huiles 1 litre") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/oil', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
 
+								</a>
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "poisson") %>">
+									<div class="block2">
+										<div class="card-category">
+                      <img class='img-category' src="https://img.icons8.com/color/48/000000/fish-food.png"/> 
+											
+											<div class="card-category-info">
+												<p>
+													Poisson
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "lait") %>">
+									<div class="block2">
+										<div class="card-category">
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/milk-carton.png"/> 
+											<div class="card-category-info">
+												<p>
+													Lait
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "oeufs moyen") %>">
+									<div class="block2">
+										<div class="card-category">
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/sunny-side-up-eggs.png"/> 
+											<div class="card-category-info">
+												<p>
+													Oeufs
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "beurre") %>">
+									<div class="block2">
+										<div class="card-category">
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/butter.png"/> 
+											<div class="card-category-info">
+												<p>
+													Beurre
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "huile") %>">
+									<div class="block2">
+										<div class="card-category">
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/olive-oil-bottle.png"/> 
+											<div class="card-category-info">
+												<p>
                           Huile
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="<%= url_for(:controller =>"products", :action =>"index", :query =>"céréales petit déjeuner") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/cereals', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+								<a href="<%= url_for(:controller =>"products", :action =>"index", :query =>"céréales") %>">
+									<div class="block2">
+										<div class="card-category"> 
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/cereal.png"/> 
+											<div class="card-category-info">
+												<p>
                           Céréales
-
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "seeds") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/seeds', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "graines") %>">
+									<div class="block2">
+										<div class="card-category">
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/paper-bag-with-seeds.png"/> 
+											<div class="card-category-info">
+												<p>
                           Graines
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "confiseries") %>">
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "bonbons") %>">
+									<div class="block2">
+										<div class="card-category">
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/sweets.png"/> 
+											<div class="card-category-info">
+												<p>
+													Confiseries
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "boissons") %>">
+									<div class="block2">
+										<div class="card-category">
+											<img class='img-category' src="https://img.icons8.com/color/48/000000/fish-food.png"/> 
+											<div class="card-category-info">
+												<p>
+													Boissons
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+                  <a href="<%= url_for(:controller => "products", :action => "index", :query => "halal") %>">
+
                   <div class="block2">
                     <div class="card-category">
-                      <%= image_tag 'icons/candy', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
-                         Confiseries
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "soft drinks") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/drinks', class: 'img-category'%>
-                      <div class="card-category-info">
-                        <p>
-                          Boissons
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="<%= url_for(:controller => "products", :action => "index", :query => "halal") %>">
-                  <div class="block2">
-                    <div class="card-category">
-                      <%= image_tag 'icons/halal', class: 'img-category'%>
+                      <img class='img-category' src="https://img.icons8.com/color/48/000000/no-meat.png"/> 
                       <div class="card-category-info">
                         <p>
                           Halal
                         </p>
+
                       </div>
                     </div>
                   </div>
@@ -165,11 +167,15 @@ Gringo!
                 <a href="<%= url_for(:controller => "products", :action => "index", :query => "vegan") %>">
                   <div class="block2">
                     <div class="card-category">
-                      <%= image_tag 'icons/vegan', class: 'img-category'%>
+                      <img class='img-category' src="https://img.icons8.com/color/48/000000/vegan-food.png"/> 
                       <div class="card-category-info">
+
+                        <p> Vegan</p>
+
                         <p>
                           Vegan
                         </p>
+
                       </div>
                     </div>
                   </div>
@@ -177,11 +183,15 @@ Gringo!
                 <a href="<%= url_for(:controller => "products", :action => "index", :query => "without gluten") %>">
                   <div class="block2">
                     <div class="card-category">
-                      <%= image_tag 'icons/gluten-free', class: 'img-category'%>
+                      <img class='img-category' src="https://img.icons8.com/color/48/000000/no-gluten.png"/> 
                       <div class="card-category-info">
+
+                        <p> Sans Gluten</p>
+
                         <p>
                           Sans Gluten
                         </p>
+
                       </div>
                     </div>
                   </div>
@@ -194,7 +204,9 @@ Gringo!
     </div>
   </div>
 </div>
+</div>
 
+<hr>
 
 <div class="container-lesplus">
 <h6>
@@ -209,31 +221,29 @@ Gringo!
             <div class="carousel-item active">
               <div class="block4-wrap">
                 <% @ratings_datas.each do |data| %>
+
                 <%= link_to product_detail_path(data[:product].code) do %>
 
                 <div class="block4">
+                <%= link_to product_detail_path(data[:product].code) do %>
                   <div class="card-review">
                     <%= image_tag data[:product].image_small_url, class: 'img-produit'%>
-                    <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+                    <img class='heart' src="https://img.icons8.com/color/48/000000/like--v1.png"/>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">
                         <h4> <%= data[:product].product_name[0,28] %>...</h4>
-                        <div class="label">
-                          <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-                          <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-                        </div>
                       </div>
                       <p> <%= data[:product].brands %> </p>
                       <div class="card-review-ratings">
                         <% if data[:product].code %>
-                        <% data[:average_rating].times do %>
-                        <i class="fas fa-star fa-xs"></i>
-                        <% end %>
-                        <% ( 5 - data[:average_rating]).times do %>
-                        <i class="far fa-star fa-xs"></i>
-                        <% end %>
-                      </br>
-                      <span><%= data[:reviews_count] %></span>
+                          <% data[:average_rating].times do %>
+                              <i class="fas fa-star fa-xs"></i>
+                          <% end %>
+                          <% ( 5 - data[:average_rating]).times do %>
+                            <i class="far fa-star fa-xs"></i>
+                          <% end %>
+                          </br>
+                          <span>(<%= data[:reviews_count] %>)</span>
                       <% end %>
                       </div>
                     </div>
@@ -268,14 +278,10 @@ Gringo!
 									<%= link_to product_detail_path(p.code) do %>
 									<div class="card-review">
 										<%= image_tag p.image_small_url, class: 'img-produit'%>
-										<%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
+										<img class='heart' src="https://img.icons8.com/color/48/000000/like--v1.png"/>
 										<div class="card-review-infos">
 											<div class="card-review-name-labels">
-												<h4><%= p.product_name[0,30] %></h4>
-												<div class="label">
-													<%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-													<%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-												</div>
+												<h4><%= p.product_name[0,28] %>..</h4>
 											</div>
 											<p>
 												<%= p.brands %>
@@ -289,7 +295,7 @@ Gringo!
 												<i class="far fa-star fa-xs"></i>
 												<% end %>
 												</br>
-												<span><%= @products_datas[p.code][:reviews_count] %></span>
+												<span>(<%= @products_datas[p.code][:reviews_count] %>)</span>
 												<% end %>
 											</div>
 										</div>
