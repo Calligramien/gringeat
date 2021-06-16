@@ -1,15 +1,19 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <!-- inactive links scan/favorites/user -->
-  <%= link_to root_path, class: "navbar-brand a-navbar" do %>
-    <%= image_tag("icons/home_icon.png") %>
+  <% selected_class = @selected_btn == "home" ? 'selected':""  %>
+  <%= link_to root_path, class: "navbar-brand a-navbar #{selected_class}" do %>
+    <i class="fas fa-home fa-2x"></i>
   <% end %>
-  <%= link_to scan_path, class: "navbar-brand a-navbar" do %>
-    <%= image_tag("icons/scan_icon.png") %>
+    <% selected_class = @selected_btn == "scan" ? 'selected':""  %>
+  <%= link_to scan_path, class: "navbar-brand a-navbar #{selected_class}" do %>
+    <i class="fas fa-barcode fa-2x"></i>
   <% end %>
-  <%= link_to product_favorite_list_path, class: "navbar-brand a-navbar" do %>
-    <%= image_tag("icons/heart_icon.png") %>
+    <% selected_class = @selected_btn == "heart" ? 'selected':""  %>
+  <%= link_to product_favorite_list_path, class: "navbar-brand a-navbar #{selected_class}" do %>
+      <i class="fas fa-heart fa-2x"></i>
   <% end %>
-  <%= link_to users_path, class: "navbar-brand a-navbar" do %>
-    <%= image_tag("icons/profile_icon.png") %>
+    <% selected_class = @selected_btn == "profile" ? 'selected':""  %>
+  <%= link_to users_path, class: "navbar-brand a-navbar #{selected_class}" do %>
+    <i class="fas fa-user-circle fa-2x"></i>
   <% end %>
 </div>
