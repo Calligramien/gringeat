@@ -1,5 +1,20 @@
-<%= form_tag("/products/#{product.code}/reviews", method: :post, :id => 'review') do |f| %>
-  <%= text_field_tag :content, nil,  name: 'review[content]', value: review.content, placeholder: 'Add a comment !'%>
-  <%= number_field_tag :ratings, nil,  name: 'review[ratings]', min: 0, max: 5, value: review.ratings%>
-  <%= submit_tag "Laisser un commentaire", class: "button-review" %>
-<% end %>
+
+
+<%= form_with url:"/products/#{product.code}/reviews", method: :post, local: true do |f| %>
+        <%= f.text_area :content, placeholder: "Commentaire", name: "review[content]" %>
+        <div class="form-group select required products_reviews_ratings">
+          <label class="select required" for="_products_<%= product.code %>_reviews_ratings"></label>
+          <select class="form-control select required reviewrating" name="review[ratings]" id="_products_<%= product.code %>_reviews_ratings">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <%= f.submit "Envoyer" %>
+      <% end %>
+
+
