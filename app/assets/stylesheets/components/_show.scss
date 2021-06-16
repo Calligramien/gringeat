@@ -120,9 +120,13 @@
 }
 
 .container-fluid{
-  margin-top: 20px;
+  height: 130px;
+}
+
+.container-fluid.category{
   height: 100px;
 }
+
 .row .flex-xl-nowrap{
   height: 150px;
 }

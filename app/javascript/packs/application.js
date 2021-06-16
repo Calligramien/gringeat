@@ -26,6 +26,8 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { initStarRating } from '../plugins/init_star_rating';
+
 
 /* import { initCaroussel } from '../components/caroussel';
 
@@ -55,6 +57,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2(); 
   initScanner();
   initHeart();
+  initStarRating();
+
 });
 
 let togg1 = document.getElementById("togg1");
