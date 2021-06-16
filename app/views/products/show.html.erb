@@ -47,13 +47,13 @@
           <% end %>
 
 
-      </div> 
+      </div>
     </div>
   <p><%= @product.brands %></p>
 
 <%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
     <p><%= @product.generic_name %></p>
-    <p><em class="underline">ingrédients:</em> <%=@product.ingredients_text%></p>
+    <p><em class="underline">ingrédients</em> : <%=@product.ingredients_text%></p>
 
 </div>
 
@@ -111,7 +111,7 @@
       </div>
     </div>
   </div>
-<br>
+
 <div class="container-reviews">
 <h5>Reviews</h5>
 
@@ -138,13 +138,13 @@
             <span><%= review.created_at.strftime("%d-%m-%Y") %></span>
         </div> 
 
-      <p><%= review.content %></p> 
+      <p><%= review.content %></p>
     </div>
   <% end %>
-  </div> 
+  </div>
 
-
-<!--   <div class="reviews-button">
+<!--
+  <div class="reviews-button">
     <ul>
       <li><a href="#" class="other-reviews">See all reviews</a></li>
     </ul>
