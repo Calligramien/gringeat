@@ -1,6 +1,7 @@
 <h4>
-	<%# <%= image_tag "icons/cactus_icon", style: "height:45px; margin-bottom: 20px;" %>
+
 </h4>
+
 <div class="d-flex mb-2">
 	<%= form_tag products_path, method: :get do %>
 	<div class="d-flex ">
@@ -27,7 +28,7 @@
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="block2-wrap"> 
-								<a href="<%= url_for(:controller => "products", :action => "index", :query => "viande") %>">
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "steack") %>">
 									<div class="block2">
 										<div class="card-category">
 											<img class='img-category' src="https://img.icons8.com/color/48/000000/steak.png"/> 
@@ -38,6 +39,7 @@
 											</div>
 										</div>
 									</div>
+
 								</a>
 								<a href="<%= url_for(:controller => "products", :action => "index", :query => "poisson") %>">
 									<div class="block2">
@@ -149,44 +151,57 @@
 									</div>
 								</a>
                   <a href="<%= url_for(:controller => "products", :action => "index", :query => "halal") %>">
+
                   <div class="block2">
                     <div class="card-category">
                       <img class='img-category' src="https://img.icons8.com/color/48/000000/no-meat.png"/> 
                       <div class="card-category-info">
-                        <p> Halal</p>
+                        <p>
+                          Halal
+                        </p>
+
                       </div>
                     </div>
                   </div>
-                  </a>
-                  <a href="<%= url_for(:controller => "products", :action => "index", :query => "vegan") %>">
+                </a>
+                <a href="<%= url_for(:controller => "products", :action => "index", :query => "vegan") %>">
                   <div class="block2">
                     <div class="card-category">
                       <img class='img-category' src="https://img.icons8.com/color/48/000000/vegan-food.png"/> 
                       <div class="card-category-info">
-                        <p> Vegan</p>
+
+                        <p>
+                          Vegan
+                        </p>
+
                       </div>
                     </div>
                   </div>
-                  </a>
-                  <a href="<%= url_for(:controller => "products", :action => "index", :query => "without gluten") %>">
+                </a>
+                <a href="<%= url_for(:controller => "products", :action => "index", :query => "without gluten") %>">
                   <div class="block2">
                     <div class="card-category">
                       <img class='img-category' src="https://img.icons8.com/color/48/000000/no-gluten.png"/> 
                       <div class="card-category-info">
-                        <p> Sans Gluten</p>
+
+                        <p>
+                          Sans Gluten
+                        </p>
+
                       </div>
                     </div>
                   </div>
-                  </a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
+
 
 <hr>
 
@@ -195,7 +210,6 @@
 	Produits les mieux notés
 </h6>
 <div class="container-fluid">
-
   <div class="row flex-xl-nowrap">
     <div class="col-12">
       <div class="bd-example">
@@ -204,7 +218,9 @@
             <div class="carousel-item active">
               <div class="block4-wrap">
                 <% @ratings_datas.each do |data| %>
-                
+
+                <%= link_to product_detail_path(data[:product].code) do %>
+
                 <div class="block4">
                 <%= link_to product_detail_path(data[:product].code) do %>
                   <div class="card-review">
@@ -225,7 +241,7 @@
                           <% end %>
                           </br>
                           <span>(<%= data[:reviews_count] %>)</span>
-                        <% end %>
+                      <% end %>
                       </div>
                     </div>
                   </div>
@@ -241,7 +257,7 @@
     </div>
   </div>
 </div>
-	
+
 <div class="container-lesplus">
 <h6>
 	Produits les plus recherchés
@@ -276,7 +292,7 @@
 												<i class="far fa-star fa-xs"></i>
 												<% end %>
 												</br>
-												<span>(<%= @products_datas[p.code][:reviews_count] %>)</span>
+												<span>(<%= @products_datas[p.code][:reviews_count] %>)-</span>
 												<% end %>
 											</div>
 										</div>
