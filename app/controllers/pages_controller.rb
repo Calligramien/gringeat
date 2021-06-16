@@ -28,5 +28,7 @@ class PagesController < ApplicationController
       reviews_count: @reviews_count[code]
       }
     }
+    
+    @selected_btn="home"
   end
 end

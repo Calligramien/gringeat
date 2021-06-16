@@ -21,12 +21,7 @@
   margin: 0;
 }
 
-.toggle-pressed {
-  box-shadow: var(--outer-shadow-sm), var(--inner-shadow-sm);
-  color: var(--acent-color);
+a.selected i{
+  color:rgb(207, 207, 207);
 }
 
-.toggle-icon {
-font-size: 25px !important;
-padding: 10px;
-}

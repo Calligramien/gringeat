@@ -18,7 +18,8 @@ class FavoritesController < ApplicationController
         @products_datas[f.code][:average_rating] = sumratings / product_reviews.count
         @products_datas[f.code][:reviews_count] = product_reviews.count
       end
-      end  
+    end  
+      @selected_btn = "heart"
   end
   
   def create
@@ -48,6 +49,4 @@ class FavoritesController < ApplicationController
       redirect_to product_detail_path(product_code), notice: 'Product is no longer in favorites'
     end
   end
-  
-
 end
