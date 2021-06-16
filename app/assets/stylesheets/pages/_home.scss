@@ -26,9 +26,18 @@
 
 .block2-wrap {
   display:flex;
-  height: 100px;
+  height: 85px;
 }
 
 .block2 {
   flex: 0 0 30%;
+  margin-top: -4px;
 }
+
+.h6 {
+  margin-bottom: 0px !important;
+}
+
+// .block2 .a {
+//     margin-top: 0px !important;
+//   }
