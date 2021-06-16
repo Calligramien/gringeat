@@ -72,10 +72,14 @@
                         <%= link_to product_detail_path(p.code) do %>
                     <div class="card-review">
                       <%= image_tag p.image_small_url, class: 'img-produit'%>
-                      <img class='heart' src="https://img.icons8.com/color/48/000000/like--v1.png"/>
+                      <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                       <div class="card-review-infos">
                         <div class="card-review-name-labels">
                           <h4><%= p.product_name %></h4>
+                          <div class="label">
+                            <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
+                            <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
+                          </div>
                         </div>
                         <p>
                         <%= p.brands %>
