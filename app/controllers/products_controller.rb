@@ -89,5 +89,6 @@ class ProductsController < ApplicationController
   end
 
   def scan
+    @selected_btn = "scan"
   end
 end
