@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 # @user.avatar.purge #=> Destroy the avatar
 def index
     @user = User.find(current_user.id)
+    @selected_btn = "profile"
 end
   
 def user_params
