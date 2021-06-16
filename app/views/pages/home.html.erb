@@ -19,7 +19,7 @@ Gringo!
 <h6>
 	Explorer par catégories
 </h6>
-<div class="container-fluid">
+<div class="container-fluid category">
 	<div class="row flex-xl-nowrap">
 		<div class="col-12">
 			<div class="bd-example">
@@ -186,6 +186,8 @@ Gringo!
 	</div>
 </div>
 
+
+<div class="container-lesplus">
 <h6>
 	Produits les mieux notés
 </h6>
@@ -199,10 +201,10 @@ Gringo!
             <div class="carousel-item active">
               <div class="block4-wrap">
                 <% @ratings_datas.each do |data| %>
-              
+                <%= link_to product_detail_path(data[:product].code) do %>
                 <div class="block4">
                   <div class="card-review">
-                    <%= image_tag 'icons/steack_icon', class: 'img-produit'%>
+                    <%= image_tag data[:product].image_small_url, class: 'img-produit'%>
                     <%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
                     <div class="card-review-infos">
                       <div class="card-review-name-labels">
@@ -229,16 +231,18 @@ Gringo!
                   </div>
                 </div>
                 <% end %>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </div>
   </div>
-
+</div>
 	
-
+<div class="container-lesplus">
 <h6>
 	Produits les plus recherchés
 </h6>
@@ -254,7 +258,7 @@ Gringo!
 								<div class="block4">
 									<%= link_to product_detail_path(p.code) do %>
 									<div class="card-review">
-										<%= image_tag 'icons/steack_icon', class: 'img-produit'%>
+										<%= image_tag p.image_small_url, class: 'img-produit'%>
 										<%= image_tag 'icons/heart_icon', style: 'width:16px', class: 'heart'%>
 										<div class="card-review-infos">
 											<div class="card-review-name-labels">
@@ -291,4 +295,5 @@ Gringo!
 			</div>
 		</div>
 	</div>
+</div>
 </div>
