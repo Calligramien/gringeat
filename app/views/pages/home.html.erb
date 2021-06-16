@@ -11,7 +11,7 @@
 	<% end %>
 	<%= link_to "filters_page" do %>
 
-	<%= image_tag "icons/filter_icon", style: "height:30px; margin:auto;" %>
+	<%= image_tag "icons/filter_icon", style: "height:30px; margin:auto" %>
 	<% end %>
 </div>
 
@@ -39,7 +39,6 @@
 											</div>
 										</div>
 									</div>
-
 								</a>
 								<a href="<%= url_for(:controller => "products", :action => "index", :query => "poisson") %>">
 									<div class="block2">
@@ -54,7 +53,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="<%= url_for(:controller => "products", :action => "index", :query => "lait") %>">
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "lait entier bouteille") %>">
 									<div class="block2">
 										<div class="card-category">
 											<img class='img-category' src="https://img.icons8.com/color/48/000000/milk-carton.png"/> 
@@ -66,7 +65,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="<%= url_for(:controller => "products", :action => "index", :query => "oeufs moyen") %>">
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "oeufs calibre") %>">
 									<div class="block2">
 										<div class="card-category">
 											<img class='img-category' src="https://img.icons8.com/color/48/000000/sunny-side-up-eggs.png"/> 
@@ -78,7 +77,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="<%= url_for(:controller => "products", :action => "index", :query => "beurre") %>">
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "beurre plaquette") %>">
 									<div class="block2">
 										<div class="card-category">
 											<img class='img-category' src="https://img.icons8.com/color/48/000000/butter.png"/> 
@@ -90,7 +89,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="<%= url_for(:controller => "products", :action => "index", :query => "huile") %>">
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "huiles 1 litre") %>">
 									<div class="block2">
 										<div class="card-category">
 											<img class='img-category' src="https://img.icons8.com/color/48/000000/olive-oil-bottle.png"/> 
@@ -102,7 +101,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="<%= url_for(:controller =>"products", :action =>"index", :query =>"céréales") %>">
+								<a href="<%= url_for(:controller =>"products", :action =>"index", :query =>"céréales petit déjeuner") %>">
 									<div class="block2">
 										<div class="card-category"> 
 											<img class='img-category' src="https://img.icons8.com/color/48/000000/cereal.png"/> 
@@ -138,7 +137,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="<%= url_for(:controller => "products", :action => "index", :query => "boissons") %>">
+								<a href="<%= url_for(:controller => "products", :action => "index", :query => "soft drinks") %>">
 									<div class="block2">
 										<div class="card-category">
 											<img class='img-category' src="https://img.icons8.com/color/48/000000/fish-food.png"/> 
@@ -192,6 +191,7 @@
                     </div>
                   </div>
                 </a>
+                
               </div>
             </div>
           </div>
@@ -218,8 +218,6 @@
             <div class="carousel-item active">
               <div class="block4-wrap">
                 <% @ratings_datas.each do |data| %>
-
-                <%= link_to product_detail_path(data[:product].code) do %>
 
                 <div class="block4">
                 <%= link_to product_detail_path(data[:product].code) do %>
@@ -292,13 +290,13 @@
 												<i class="far fa-star fa-xs"></i>
 												<% end %>
 												</br>
-												<span>(<%= @products_datas[p.code][:reviews_count] %>)-</span>
-												<% end %>
+												<span>(<%= @products_datas[p.code][:reviews_count] %>)</span>
 											</div>
 										</div>
 									</div>
 								</div>
 								<% end %>
+                <% end %>
 								<% end %>
 							</div>
 						</div>
