@@ -1,76 +1,18 @@
-<!-- <p> Find me in app/views/devise/registrations/edit.html.erb </p> -->
-<div class="profile-container">
-  <%= image_tag 'Dmn', class: "avatar-giant"%>
-  <br>
-
-  <h4> Damien Gautier </h4>
-  <br>
-
-  <div class="flexbox">
-    <div class="d-flex">
-      <%= link_to "Modifier le profil", '/422.html',
-     class: "searchform"
-     %>
-     <%= submit_tag "", class: "profile_btn" %>
-   </div>
-
-   <div class="d-flex">
-     <%= link_to "Réglages", '/422.html',
-     class: "searchform"
-     %>
-     <%= submit_tag "", class: "setting_btn" %>
-   </div>
-
-   <div class="d-flex">
-     <%= link_to "Confidentialité", '/422.html',
-     class: "searchform"
-     %>
-     <%= submit_tag "", class: "privacy_btn" %>
-   </div>
-
-   <div class="d-flex">
-     <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete,
-     class: "searchform"
-     %>
-     <%= submit_tag "", class: "logout_btn" %>
-   </div>
- </div>
-</div>
-
-
-      <!-- <div class="fullname"><% @user.last_name %><% @user.first_name %>
-      </div>
-      <br>
-
-    <div class="profil-options">
-      <p><i class="far fa-user"></i>
-
-
-      <br>
-      <p><i class="fas fa-cog"></i> Réglages</p>
-      <br>
-      <p><i class="fas fa-clipboard-list"></i> Conditions <br> & politique de confidentialité</p>
-      <br>
-      <p><i class="fas fa-sign-out-alt"></i> Se déconnecter</p>
-      <br>
-
-    </div>
-</div> -->
-
-<!--
-
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input  :first_name %>
+    <%= f.input :last_name %>
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :avatar, as: :file %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -94,7 +36,26 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
- -->
+
+
+      <!-- <div class="fullname"><% @user.last_name %><% @user.first_name %>
+      </div>
+      <br>
+
+    <div class="profil-options">
+      <p><i class="far fa-user"></i>
+
+
+      <br>
+      <p><i class="fas fa-cog"></i> Réglages</p>
+      <br>
+      <p><i class="fas fa-clipboard-list"></i> Conditions <br> & politique de confidentialité</p>
+      <br>
+      <p><i class="fas fa-sign-out-alt"></i> Se déconnecter</p>
+      <br>
+
+    </div>
+</div> -->
 
 <!-- <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
   <div class="search-form-control form-group">

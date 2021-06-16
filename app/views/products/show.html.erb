@@ -9,15 +9,23 @@
 <%= link_to products_path  do %>
   <i class="fas fa-chevron-left"></i>
 <% end %>
-<% if @favorite %>
-  <%= link_to favorite_destroy_path(@favorite), method: :delete do %>
-    <%= image_tag 'icons/heartfilled_icon', style: 'width:30px', class: 'heart'%>
+  <%= link_to toggle_favorite_path(code: params[:code]), method: :post, remote: :true do %>
+  <div class="custom-love-btn" id="product-love-btn">
+		<div class="love action">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="custom-heart <%= "love" if @favorite %>  "></div>
+		</div>
+		<div class="send action"></div>
+		<div class="more action"></div>
+	</div>
  <% end %> 
-<% else %>
-  <%= link_to product_favorite_path(params[:code]), method: :post do %>
-    <%= image_tag 'icons/heart_icon', style: 'width:30px', class: 'heart'%>
-  <% end %>
-<% end %>
 
   </div>
 
@@ -39,13 +47,13 @@
           <% end %>
 
 
-      </div> 
+      </div>
     </div>
   <p><%= @product.brands %></p>
 
 <%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
     <p><%= @product.generic_name %></p>
-    <%= link_to "See ingredients"%>
+    <p><em class="underline">ingrédients</em> : <%=@product.ingredients_text%></p>
 
 </div>
 
@@ -130,17 +138,17 @@
             <span><%= review.created_at.strftime("%d-%m-%Y") %></span>
         </div> 
 
-      <p><%= review.content %></p> 
+      <p><%= review.content %></p>
     </div>
   <% end %>
-  </div> 
+  </div>
 
-
+<!--
   <div class="reviews-button">
     <ul>
       <li><a href="#" class="other-reviews">See all reviews</a></li>
     </ul>
-  </div>
+  </div> -->
 </div> 
 </div>
 

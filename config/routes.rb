@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: [:index]
+  
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :products, except: :show do  
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   get "/favorites", to: "favorites#index", as: :product_favorite_list
+  post "products/:code/toggle_favorite", to: "favorites#toggle_favorite", as: :toggle_favorite
   post "/products/:code/favorites", to: "favorites#create", as: :product_favorite 
   delete "/favorites/:id", to: "favorites#destroy", as: :favorite_destroy
 
