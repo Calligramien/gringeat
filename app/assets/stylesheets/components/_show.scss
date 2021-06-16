@@ -83,7 +83,7 @@
 .card-review-ratings i {
   display: inline-block;
   color:#FAD41B;
-  padding-left:2px;
+  padding-right:2px;
 }
 
 
@@ -102,7 +102,7 @@
 
 /* fix width and make user scroll with mouse/touch to see the items */
 @media screen and (max-width:768px){
-	.block4{max-width: 250px;
+	.block4{max-width: 270px;
     flex: 1 0 80%;
     margin-right: 20px;
     overflow: hidden;
@@ -112,7 +112,7 @@
 	.carousel-inner{overflow-x:visible;}
 }
 @media screen and (max-width:480px){
-	.block4{max-width:240px;}	
+	.block4{max-width:260px;}	
 }
 
 .col-12{

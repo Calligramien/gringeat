@@ -1,11 +1,12 @@
 // Specific CSS for your home-page
 .searchbar {
-  width: 80%;
+  width: 100%;
   height: 56px;
   background-color: #F2F3F2;
   text-align: left;
-  font-size: 16px;
-  color: #495057;
+  font-size: 12px;
+  letter-spacing: 0.32px;
+  color: #939394;
   border-radius: 8px 0 0 8px !important;
   padding: 10px 20px !important;
   border: none !important;
@@ -13,9 +14,9 @@
 
 .search_btn {
   height: 56px;
-  width: 56px;
+  width: 80px;
   background-image: url(icons/search_icon.png);
-  background-size: 30px;
+  background-size: 20px;
   background-position: center;
   z-index: 100;
   border: none;
@@ -26,7 +27,7 @@
 
 .block2-wrap {
   display:flex;
-  height: 85px;
+  height: 70px;
 }
 
 .block2 {
