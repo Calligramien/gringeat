@@ -6,13 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
+
 
 Review.destroy_all
 User.destroy_all
 
-User.create({ last_name: "Gautier", first_name: "Damien" , email: "damiengautier@gmail.com", country: Faker::Address.country, language: Faker::Nation.language, password: "123456"})
+img_user_1 =URI.open("https://media-exp3.licdn.com/dms/image/C4D03AQEsZIoXdDUlaw/profile-displayphoto-shrink_200_200/0/1623495054751?e=1629331200&v=beta&t=lVOgMkCmzPMiH42j1b_JVtiLrCSiw25lWkabUs73wL4")
+user_1 = User.create({ last_name: "Gautier", first_name: "Damien" , email: "damiengautier@gmail.com", country: Faker::Address.country, language: Faker::Nation.language, password: "123456"})
+user_1.avatar.attach(io: img_user_1, filename: 'Damien.jpeg', content_type: 'image/jpeg')
+
 10.times do
-User.create({ last_name: Faker::Name.last_name, first_name: Faker::Name.first_name , email: Faker::Internet.email, country: Faker::Address.country, language: Faker::Nation.language, password: "123456"})
+user_1 = User.create!({ last_name: Faker::Name.last_name, first_name: Faker::Name.first_name , email: Faker::Internet.email, country: Faker::Address.country, language: Faker::Nation.language, password: "123456" })
+img_user_1 = URI.open("https://source.unsplash.com/collection/772333/300x300")
+user_1.avatar.attach(io: img_user_1, filename: 'User.jpeg', content_type: 'image/jpeg')
 end
 
 Review.create({content:"On sent bien le cacao de cette pâte à tartiner, le gout est prononcé mais bien équilibré, j'apprécie vraiment le moment lorsque j'en tartine sur des pancakes le matin.",ratings: 4,product_code:"3017620422003",user_id: User.all[10].id})

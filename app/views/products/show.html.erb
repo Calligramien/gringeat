@@ -121,8 +121,11 @@
     <div class="card-written-review">
       <div class="card-written-review-avatar">
 
-        <p><%= cl_image_tag review.user.avatar.key, :class =>"avatar-review"  %></p>
-
+      <%if review.user.avatar.attached?%>
+        <%= cl_image_tag review.user.avatar.key, :class =>"avatar-review"  %>
+      <%else%>
+        <i class="fas fa-user fa-2x avatar-review"></i>
+      <%end%>
         <p><%= review.user.first_name%></p>
 
       </div>

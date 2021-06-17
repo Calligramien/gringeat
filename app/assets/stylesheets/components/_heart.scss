@@ -14,15 +14,7 @@ $size: 30px;
     bottom: 30vh;
 }
   
-  .send {
-    background: url('https://cbwconline.com/IMG/Codepen/Send-Grey.svg') center/contain no-repeat;
-    left: 40vw;
-  }
-  
-  .more {
-    background: url('https://cbwconline.com/IMG/Codepen/More-Grey.svg') center/contain no-repeat;
-    left: 65vw;
-  }
+
   
   .line {
     @for $i from 1 through 8 {
