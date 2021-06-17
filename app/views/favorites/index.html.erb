@@ -3,34 +3,33 @@
 
 <div class="cards-fav">
   <% @favorites.each do |favorite| %>
-  <%= link_to product_detail_path(favorite.code) do %>
-    <div class="card-fav">
-      <%= image_tag favorite.image_small_url, class: "fav-result" %>
-
-      <% @favorite.each do |favorite| %>
-      <%= link_to favorite_destroy_path(favorite.id), method: :delete do %>
-      <%= image_tag 'icons/bin_icon', style: 'width:16px', class: 'fav-bin'%>
-      <% end %>
-      <% end %>
-        <div class="card-fav-infos">
-          <h4>
-            <%= favorite.product_name[0,30]  %>
-          </h4>
-              <p>
-                <% favorite.brands %>
-              </p>
-              <div class="card-fav-ratings">
-                <% if @products_datas[favorite.code] %>
-                <% ( 5 - @products_datas[favorite.code][:average_rating]).times do %>
+  <div class="card-fav">
+    <%= link_to product_detail_path(favorite.code) do %>
+      <div class="card-fav-infos">
+        <%= image_tag favorite.image_small_url, class: "fav-result" %>
+        <div class="card-fav-name">
+          <h4><%= favorite.product_name[0,30]  %></h4>
+            <p><%= favorite.brands %></p>
+          <div class="card-fav-ratings">
+            <% if @products_datas[favorite.code] %>
+              <% (@products_datas[favorite.code][:average_rating]).times do %>
                 <i class="fas fa-star fa-xs"></i>
-                <% end %>
-                </br>
-                <span>(<%= @products_datas[favorite.code][:reviews_count] %>)</span>
-                <% end %>
-              </div>
+              <% end %>
+              <% (5 - @products_datas[favorite.code][:average_rating]).times do %>
+                <i class="far fa-star fa-xs"></i>
+              <% end %>
+              </br>
+              <span>(<%= @products_datas[favorite.code][:reviews_count] %>)</span>
+            <% end %>
+          </div>
         </div>
+      </div>
+     <% end %>
+      <% favorite_id = @favorite.find_by_product_code(favorite.code).id %>
+        <%= link_to favorite_destroy_path(favorite_id), method: :delete do %>
+          <%= image_tag 'icons/bin_icon', style: 'width:16px', class: 'fav-bin'%>
+        <% end %>
   </div>
-<% end %>
-<% end %>
+  <% end %>
 </div>
 
