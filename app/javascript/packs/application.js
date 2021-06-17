@@ -51,6 +51,7 @@ function order_by_occurrence(arr) {
 
 import { initScanner } from '../plugins/init_scanner';
 import { initHeart } from '../components/heartbtn';
+import { displayDiv } from '../components/displaydiv';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -58,6 +59,7 @@ document.addEventListener('turbolinks:load', () => {
   initScanner();
   initHeart();
   initStarRating();
+  displayDiv();
 
 });
 
@@ -73,3 +75,9 @@ if (togg1) {
     }
   })
 }
+
+
+
+
+
+
