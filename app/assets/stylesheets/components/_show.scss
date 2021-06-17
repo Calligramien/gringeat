@@ -78,6 +78,7 @@
 .product-id-infos-titre{
   display:flex;
   justify-content: space-between;
+  align-items: start;
 }
 
 .card-review-ratings i {
@@ -165,4 +166,8 @@ input[type="text" i], input[type="number" i] {
 .underline {
   text-decoration: underline;
   font-size: 16px;
+}
+
+.container-suggestion{
+  margin-top: 20px;
 }

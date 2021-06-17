@@ -10,8 +10,8 @@ $size: 30px;
   }
   
   .love { 
-    left: 73vw; 
-    bottom: auto;
+    left: 75vw; 
+    bottom: 30vh;
 }
   
   .send {
@@ -48,7 +48,7 @@ $size: 30px;
   
   $width: $size/2;
   .custom-heart{
-    background-color: #D5D4D4;
+    background-color: #ffffff;
     width: $width;
     height: $width;
     margin: auto;
@@ -61,7 +61,7 @@ $size: 30px;
       width: $width;
       height: $width;
       border-radius: 50%;
-      background-color: #D5D4D4;
+      background-color: #ffffff;
       position: absolute;
     }
     &:before {
