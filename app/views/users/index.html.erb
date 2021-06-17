@@ -1,6 +1,9 @@
 <!-- <p> Find me in app/views/devise/registrations/edit.html.erb </p> -->
 <div class="profile-container">
-<%= cl_image_tag current_user.avatar.key, class: "avatar-giant"%>
+
+<% if current_user.avatar.attached? %>
+  <%= cl_image_tag current_user.avatar.key, class: "avatar-giant"%>
+<% end %>
   <br>
 
   <h4> <%= @user.first_name %></h4>
