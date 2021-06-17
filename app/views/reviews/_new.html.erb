@@ -1,7 +1,7 @@
 
 
 <%= form_with url:"/products/#{product.code}/reviews", method: :post, local: true do |f| %>
-        <%= f.text_area :content, placeholder: "Commentaire", name: "review[content]" %>
+        <%= f.text_area :content, placeholder: "Ecrire un commentaire", name: "review[content]" %>
         <div class="form-group select required products_reviews_ratings">
           <label class="select required" for="_products_<%= product.code %>_reviews_ratings"></label>
           <select class="form-control select required reviewrating" name="review[ratings]" id="_products_<%= product.code %>_reviews_ratings">
