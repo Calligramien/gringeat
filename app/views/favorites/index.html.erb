@@ -1,43 +1,42 @@
 <h4 class="favh4">Favoris</h4>
+<div class="fav-container">
+  <div class="cards-fav">
+    <% @favorites.each do |favorite| %>
 
-<div class="cards-result">
-  <% @favorites.each do |favorite| %>
+    <div class="card-fav">
+    <%= link_to product_detail_path(favorite.code) do %>
+    <%= image_tag favorite.image_small_url, alt: "alttext", class: "fav-produit-result" %>
 
-  <div class="card-result">
-  <%= link_to product_detail_path(favorite.code) do %>
-  <%= image_tag favorite.image_small_url, alt: "alttext", class: "img-produit-result" %>
-
-  <% @favorite.each do |favorite| %>
-  <%= link_to favorite_destroy_path(favorite.id), method: :delete do %>
-    <%= image_tag 'icons/bin_icon', style: 'width:16px', class: 'bin'%>
-  <% end %>
-  <% end %>
+    <% @favorite.each do |favorite| %>
+    <%= link_to favorite_destroy_path(favorite.id), method: :delete do %>
+      <%= image_tag 'icons/bin_icon', style: 'width:16px', class: 'bin'%>
+    <% end %>
+    <% end %>
 
 
-    <div class="card-result-infos">
-      <div class="card-result-name-labels">
-        <h4><%= favorite.product_name[0,30]  %></h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-        </div>
-      </div>
+      <div class="card-fav-infos">
+        <div class="card-fav-name-labels">
+          <h5><%= favorite.product_name[0,30]  %></h5>
+          <div class="fav-label">
+           <%= image_tag 'icons/glutenfree_icon', style: 'width:24px', class: 'label'%>
+           <%= image_tag 'icons/leaf_icon', style: 'width:24px'%>
+         </div>
+       </div>
 
-      <p><% favorite.brands %></p>
-      <% if @products_datas[favorite.code] %>
-          <% @products_datas[favorite.code][:average_rating].times do %>
-            <i class="fas fa-star fa-xs"></i>
+       <p><% favorite.brands %></p>
+        <% if @products_datas[favorite.code] %>
+        <% @products_datas[favorite.code][:average_rating].times do %>
+          <i class="fas fa-star fa-xs"></i>
+            <% end %>
+            <% ( 5 - @products_datas[favorite.code][:average_rating]).times do %>
+          <i class="far fa-star fa-xs"></i>
           <% end %>
-          <% ( 5 - @products_datas[favorite.code][:average_rating]).times do %>
-            <i class="far fa-star fa-xs"></i>
-          <% end %>
-        </br>
-        <span><%= @products_datas[favorite.code][:reviews_count] %></span>
+   </br>
+    <span><%= @products_datas[favorite.code][:reviews_count] %></span>
         <% end %>
       </div>
     </div>
+  <% end %>
+  <% end %>
   </div>
-  <% end %>
-  <% end %>
-        
-</div>  
+</div>
