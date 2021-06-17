@@ -1,4 +1,4 @@
-<div class="main-container">
+
 
 <div class="product-id">
 <%#CARD IMAGE%>
@@ -28,6 +28,7 @@
  <% end %> 
 
   </div>
+  </div>
 
 <%# CARD INFOS %> 
   <div class="product-id-infos">
@@ -53,7 +54,7 @@
 
 <%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
     <p><%= @product.generic_name %></p>
-    <p><em class="underline">ingrédients</em> : <%=@product.ingredients_text%></p>
+    <p><em class="underline">Ingrédients</em> : <%=@product.ingredients_text%></p>
 
 </div>
 
@@ -117,8 +118,10 @@
 
     <div class="card-written-review">
       <div class="card-written-review-avatar">
+
         <p><%= cl_image_tag review.user.avatar.key, :class =>"avatar-review"  %></p>
-        <p><%= review.user_id%></p>
+
+        <p><%= review.user.first_name%></p>
 
       </div>
       <div class="card-written-review-infos">
@@ -136,6 +139,7 @@
         </div> 
 
       <p><%= review.content %></p>
+      </div>
     </div>
   <% end %>
   </div>
@@ -149,6 +153,6 @@
 </div>
 
 </div>
-</div>
+
 
 
