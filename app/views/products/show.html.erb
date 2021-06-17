@@ -117,8 +117,9 @@
 
     <div class="card-written-review">
       <div class="card-written-review-avatar">
-        <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="" class="avatar-review">
+        <p><%= cl_image_tag review.user.avatar.key, :class =>"avatar-review"  %></p>
         <p><%= review.user_id%></p>
+
       </div>
       <div class="card-written-review-infos">
         <div class="card-written-review-ratings">
