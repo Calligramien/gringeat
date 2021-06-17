@@ -5,7 +5,7 @@
   <% @favorites.each do |favorite| %>
   <%= link_to product_detail_path(favorite.code) do %>
     <div class="card-fav">
-      <%= image_tag favorite.image_small_url, alt: "alttext", class: "fav-produit-result" %>
+      <%= image_tag favorite.image_small_url, class: "fav-result" %>
 
       <% @favorite.each do |favorite| %>
       <%= link_to favorite_destroy_path(favorite.id), method: :delete do %>
