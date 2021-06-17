@@ -54,7 +54,10 @@
 
 <%# CARD INFOS DESCRIPTION + LINK INGREDIENTS %>
     <p><%= @product.generic_name %></p>
-    <p><em class="underline">Ingrédients</em> : <%=@product.ingredients_text%></p>
+    <p title="Afficher le div" id="ingredients">Voir les ingrédients</p>
+      <div class="hide">
+        <p><%=@product.ingredients_text%></p>
+      </div>
 
 </div>
 
@@ -157,6 +160,5 @@
 </div>
 
 </div>
-
 
 
