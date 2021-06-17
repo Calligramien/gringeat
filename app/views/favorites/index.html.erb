@@ -13,18 +13,19 @@
       <% end %>
       <% end %>
         <div class="card-fav-infos">
-          <h4><%= favorite.product_name[0,30]  %></h4>
-            <p><% favorite.brands %></p>
+          <h4>
+            <%= favorite.product_name[0,30]  %>
+          </h4>
+              <p>
+                <% favorite.brands %>
+              </p>
               <div class="card-fav-ratings">
                 <% if @products_datas[favorite.code] %>
-                <% @products_datas[favorite.code][:average_rating].times do %>
-                  <i class="fas fa-star fa-xs"></i>
-                    <% end %>
-                    <% ( 5 - @products_datas[favorite.code][:average_rating]).times do %>
-                      <i class="far fa-star fa-xs"></i>
-                      <% end %>
-                      </br>
-                      <span><%= @products_datas[favorite.code][:reviews_count] %></span>
+                <% ( 5 - @products_datas[favorite.code][:average_rating]).times do %>
+                <i class="fas fa-star fa-xs"></i>
+                <% end %>
+                </br>
+                <span>(<%= @products_datas[favorite.code][:reviews_count] %>)</span>
                 <% end %>
               </div>
         </div>
