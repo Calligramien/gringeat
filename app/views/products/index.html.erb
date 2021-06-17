@@ -1,21 +1,17 @@
 <h4 class="favh4">Résultats</h4>
 
-<div class="cards-result">
+<div class="cards-fav">
 <% @products.each do |product| %>
   <%= link_to product_detail_path(product.code) do %>
-  <div class="card-result">
+  <div class="card-fav">
 
-    <%= image_tag product.image_small_url, alt: "alttext", class: "img-produit-result" %>
-    <div class="card-result-infos">
-      <div class="card-result-name-labels">
+    <%= image_tag product.image_small_url, alt: "alttext", class: "fav-result" %>
+    <div class="card-fav-infos">
+      <div class="card-fav-name-labels">
         <h4><%= product.product_name[0,20] %></h4>
-        <div class="label">
-         <%= image_tag 'icons/glutenfree_icon', style: 'width:16px', class: 'label'%>
-         <%= image_tag 'icons/leaf_icon', style: 'width:16px'%>
-        </div>
       </div>
       <p><% product.brands %></p>
-      <div class="card-result-ratings">
+      <div class="card-fav-ratings">
         <% if @products_datas[product.code] %>
           <% @products_datas[product.code][:average_rating].times do %>
             <i class="fas fa-star fa-xs"></i>
