@@ -3,9 +3,9 @@ class ProductsController < ApplicationController
   def index
     if params[:query].present?
       session[:search]=params[:query]
-      @products = Openfoodfacts::Product.search(params[:query], locale: 'fr', page_size: 12)
+      @products = Openfoodfacts::Product.search(params[:query], locale: 'cn', page_size: 12)
     elsif session[:search].present?
-      @products = Openfoodfacts::Product.search(session[:search], locale: 'fr', page_size: 12)
+      @products = Openfoodfacts::Product.search(session[:search], locale: 'cn', page_size: 12)
    else
       render "pages/home"
     end
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
   def show
 
     # récupérer le produit scanné ou sélectionné et afficher la page produit
-    @product = Openfoodfacts::Product.get(params[:code], locale: 'fr')
+    @product = Openfoodfacts::Product.get(params[:code], locale: 'cn')
 
     # on récupère la liste des catégories en string et on la transforme en array
     categories = @product.categories.split(",") 
@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
     @keywords = categories[min_index] + ", " + categories[godOfRandom]
 
     # permet de faire une recherche par catégorie et afficher des produits qui pourraient intéressé
-    @products = Openfoodfacts::Product.search(@keywords, locale: 'fr', page_size: 5)
+    @products = Openfoodfacts::Product.search(@keywords, locale: 'cn', page_size: 5)
     
     @product_view = ProductView.find_by(code: params[:code])
     if @product_view
