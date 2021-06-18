@@ -268,7 +268,7 @@
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="block4-wrap">
-								 <% @ratings_datas.each do |data| %>
+								 <% @ratings_datas.reverse_each do |data| %>
 
                 <div class="block4">
                 <%= link_to product_detail_path(data[:product].code) do %>
