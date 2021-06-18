@@ -2,15 +2,14 @@
 
 <div class="cards-fav">
 <% @products.each do |product| %>
-  <%= link_to product_detail_path(product.code) do %>
   <div class="card-fav">
-
-    <%= image_tag product.image_small_url, alt: "alttext", class: "fav-result" %>
+    <%= link_to product_detail_path(product.code) do %>
     <div class="card-fav-infos">
-      <div class="card-fav-name-labels">
-        <h4><%= product.product_name[0,20] %></h4>
-      </div>
-      <p><% product.brands %></p>
+      <%= image_tag product.image_small_url, alt: "alttext", class: "fav-result" %>
+      <div class="card-fav-name">
+        <h4><%= product.product_name[0,28].. %></h4>
+        <p><%= product.brands %></p>
+      
       <div class="card-fav-ratings">
         <% if @products_datas[product.code] %>
           <% @products_datas[product.code][:average_rating].times do %>
@@ -21,10 +20,15 @@
           <% end %>
         </br>
         <span><%= @products_datas[product.code][:reviews_count] %></span>
-        <% end %>
+        <% end %> 
       </div>
+      </div>
+      </div>
+      <% end %>
     </div>
+     
   </div>
   <% end %>
-  <% end %>
 </div>
+
+
